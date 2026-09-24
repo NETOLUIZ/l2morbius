@@ -62,6 +62,7 @@ if [ "$SERVER_TYPE" = "login" ]; then
     if [ -f "config/Server.ini" ]; then
         sed -i "s|^LoginserverHostname = .*|LoginserverHostname = 0.0.0.0|g" "config/Server.ini"
         sed -i "s|^LoginHostname = .*|LoginHostname = 0.0.0.0|g" "config/Server.ini"
+        sed -i "s|^AutoCreateAccounts = .*|AutoCreateAccounts = True|g" "config/Server.ini"
     fi
 
     mkdir -p log
