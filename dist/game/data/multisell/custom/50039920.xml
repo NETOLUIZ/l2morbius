@@ -244,11 +244,13 @@
 		<production id="8913" count="1" />
 	</item>
 	<item>
-		<ingredient id="6393" count="1000" />
+		<ingredient id="6392" count="200000" />
+		<ingredient id="6393" count="200000" />
 		<production id="8914" count="1" />
 	</item>
 	<item>
-		<ingredient id="6393" count="1000" />
+		<ingredient id="6392" count="200000" />
+		<ingredient id="6393" count="200000" />
 		<production id="8915" count="1" />
 	</item>
 	<item>

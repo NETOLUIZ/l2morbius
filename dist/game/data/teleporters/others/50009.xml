@@ -24,6 +24,9 @@
 		</teleport>
 		<teleport name="list3" type="OTHER"> <!-- arenas -->
 			<location name="Coliseum" x="146440" y="46723" z="-3400" feeCount="2000" />
+			<location name="Arena 1 - Baium" x="148500" y="46045" z="-3410" feeCount="2000" />
+			<location name="Arena 2 - Valakas" x="148500" y="47420" z="-3410" feeCount="2000" />
+			<location name="Arena 3 - Zaken" x="148500" y="46665" z="-3410" feeCount="2000" />
 		</teleport>
 		<teleport name="list4" type="OTHER"> <!-- 30080 Clarissa - Giran -->
 			<location name="Giran Harbor" x="47938" y="186864" z="-3480" feeCount="5200" />

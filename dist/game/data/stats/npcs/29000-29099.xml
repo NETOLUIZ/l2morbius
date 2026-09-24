@@ -1010,7 +1010,7 @@
 		<sex>MALE</sex>
 		<acquire exp="10253400" sp="1081544" />
 		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-			<vitals hp="1709400" hpRegen="750" mp="18000" mpRegen="99" />
+			<vitals hp="90000" hpRegen="750" mp="18000" mpRegen="99" />
 			<attack physical="3374.18" magical="2200" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="3300" magical="2200" />
 			<speed>
@@ -1108,7 +1108,7 @@
 		<sex>MALE</sex>
 		<acquire exp="4879745" sp="423589" />
 		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-			<vitals hp="360722" hpRegen="346.8" mp="180000" mpRegen="100" />
+			<vitals hp="90000" hpRegen="346.8" mp="180000" mpRegen="100" />
 			<attack physical="3616" magical="1520" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="1981" magical="966.39" evasion="-18" />
 			<speed>
@@ -1405,7 +1405,7 @@
 		<sex>MALE</sex>
 		<acquire exp="284286178" sp="27215401" />
 		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
-			<vitals hp="7500000" hpRegen="1000" mp="1800000" mpRegen="1000" />
+			<vitals hp="90000" hpRegen="1000" mp="1800000" mpRegen="1000" />
 			<attack physical="16100.987186868" magical="6669.68793416566" random="50" critical="1" accuracy="9" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="4369.85701721731" magical="1186.4623698258" evasion="3" />
 			<speed>

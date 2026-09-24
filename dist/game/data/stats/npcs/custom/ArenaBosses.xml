@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+	<!-- Baium Arena 1 -->
+	<npc id="60002" displayId="29020" level="75" type="RaidBoss" name="Baium" usingServerSideName="true" title="Arena 1 Boss" usingServerSideTitle="true">
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="10253400" sp="1081544" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="90000" hpRegen="750" mp="18000" mpRegen="99" />
+			<attack physical="3374.18" magical="2200" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="3300" magical="2200" />
+			<speed>
+				<walk ground="80" />
+				<run ground="120" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status undying="false" attackable="true" />
+		<skillList>
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4256" level="1" /> <!-- Stun Resistance -->
+			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+			<skill id="4127" level="1" /> <!-- General Attack -->
+			<skill id="4128" level="1" /> <!-- Wind Of Force -->
+			<skill id="4129" level="1" /> <!-- Earthquake -->
+			<skill id="4130" level="1" /> <!-- Striking of Thunderbolt -->
+			<skill id="4131" level="1" /> <!-- Stun -->
+		</skillList>
+		<corpseTime>13</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="65" />
+			<height normal="174" />
+		</collision>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="6658" min="1" max="1" chance="100" /> <!-- Ring of Baium -->
+				</group>
+				<group chance="100">
+					<item id="57" min="5000000" max="10000000" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="80">
+					<item id="6364" min="1" max="1" chance="20" /> <!-- Forgotten Blade -->
+					<item id="6579" min="1" max="1" chance="20" /> <!-- Arcana Mace -->
+					<item id="7575" min="1" max="1" chance="20" /> <!-- Draconic Bow -->
+					<item id="6367" min="1" max="1" chance="20" /> <!-- Angel Slayer -->
+					<item id="6372" min="1" max="1" chance="20" /> <!-- Heaven's Divider -->
+				</group>
+				<group chance="80">
+					<item id="8762" min="1" max="3" chance="100" /> <!-- Top-Grade Life Stone: level 76 -->
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+
+	<!-- Valakas Arena 2 -->
+	<npc id="60003" displayId="29028" level="85" type="RaidBoss" name="Valakas" usingServerSideName="true" title="Arena 2 Boss" usingServerSideTitle="true">
+		<race>DRAGON</race>
+		<sex>MALE</sex>
+		<acquire exp="284286178" sp="27215401" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="90000" hpRegen="1000" mp="1800000" mpRegen="1000" />
+			<attack physical="16100" magical="6669" random="50" critical="1" accuracy="9" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="4369" magical="1186" evasion="3" />
+			<speed>
+				<walk ground="120" />
+				<run ground="300" />
+			</speed>
+			<hitTime>600</hitTime>
+		</stats>
+		<status undying="false" attackable="true" noSleepMode="true" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="4679" level="1" /> <!-- Valakas -->
+		</skillList>
+		<corpseTime>21</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="190" />
+			<height normal="335" />
+		</collision>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="6657" min="1" max="1" chance="100" /> <!-- Necklace of Valakas -->
+				</group>
+				<group chance="100">
+					<item id="57" min="10000000" max="20000000" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="80">
+					<item id="6364" min="1" max="1" chance="20" /> <!-- Forgotten Blade -->
+					<item id="6579" min="1" max="1" chance="20" /> <!-- Arcana Mace -->
+					<item id="7575" min="1" max="1" chance="20" /> <!-- Draconic Bow -->
+					<item id="6367" min="1" max="1" chance="20" /> <!-- Angel Slayer -->
+					<item id="6372" min="1" max="1" chance="20" /> <!-- Heaven's Divider -->
+				</group>
+				<group chance="80">
+					<item id="8762" min="1" max="5" chance="100" /> <!-- Top-Grade Life Stone: level 76 -->
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+
+	<!-- Zaken Arena 3 -->
+	<npc id="60004" displayId="29022" level="60" type="RaidBoss" name="Zaken" usingServerSideName="true" title="Arena 3 Boss" usingServerSideTitle="true">
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="4879745" sp="423589" />
+		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
+			<vitals hp="90000" hpRegen="346.8" mp="180000" mpRegen="100" />
+			<attack physical="3616" magical="1520" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="1981" magical="966.39" evasion="-18" />
+			<speed>
+				<walk ground="42" />
+				<run ground="190" />
+			</speed>
+			<hitTime>590</hitTime>
+		</stats>
+		<status undying="false" attackable="true" noSleepMode="true" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<corpseTime>300</corpseTime>
+		<exCrtEffect>true</exCrtEffect>
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="22" />
+			<height normal="52" />
+		</collision>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="6659" min="1" max="1" chance="100" /> <!-- Earring of Zaken -->
+				</group>
+				<group chance="100">
+					<item id="57" min="3000000" max="6000000" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="70">
+					<item id="6364" min="1" max="1" chance="20" /> <!-- Forgotten Blade -->
+					<item id="6579" min="1" max="1" chance="20" /> <!-- Arcana Mace -->
+					<item id="7575" min="1" max="1" chance="20" /> <!-- Draconic Bow -->
+					<item id="6367" min="1" max="1" chance="20" /> <!-- Angel Slayer -->
+					<item id="6372" min="1" max="1" chance="20" /> <!-- Heaven's Divider -->
+				</group>
+				<group chance="80">
+					<item id="8762" min="1" max="3" chance="100" /> <!-- Top-Grade Life Stone: level 76 -->
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+</list>
