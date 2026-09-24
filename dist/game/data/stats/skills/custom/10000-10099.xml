@@ -45,4 +45,18 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="10003" levels="1" name="Luxurious Gold Circlet">
+		<!-- Luxurious Gold Circlet: M. Atk. +15%, Casting Spd. +30%, MP Regeneration +30% -->
+		<icon>icon.Accessary_gold_circlet_i00</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>75</magicLevel>
+		<effects>
+			<effect name="Buff">
+				<mul stat="mAtk">1.15</mul>
+				<mul stat="mAtkSpd">1.30</mul>
+				<mul stat="regMp">1.30</mul>
+			</effect>
+		</effects>
+	</skill>
 </list>

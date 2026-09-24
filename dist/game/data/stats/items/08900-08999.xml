@@ -136,6 +136,9 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
+		<skills>
+			<skill id="10003" level="1" />
+		</skills>
 	</item>
 	<item id="8915" type="Armor" name="Luxurious Silver Circlet">
 		<!-- Luxurious Silver Circlet. It uses 2 hair accessory slots. -->
