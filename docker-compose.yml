@@ -95,46 +95,12 @@ services:
         chmod +x /app/docker/entrypoint.sh
         exec /app/docker/entrypoint.sh
 
-  web:
-    image: php:8.2-apache
-    container_name: l2-website
-    restart: unless-stopped
-    environment:
-      DB_HOST: mariadb
-      DB_PORT: 3306
-      DB_NAME: ${DB_NAME:-l2jmobiusinterlude}
-      DB_USER: root
-      DB_PASS: ${DB_PASSWORD:-luiz33423342}
-      SERVER_IP: ${EXTERNAL_IP:-2.24.108.110}
-      LOGIN_PORT: "2106"
-      GAME_PORT: "7777"
-    ports:
-      - "8090:80"
-    volumes:
-      - l2_app_data:/app
-    depends_on:
-      mariadb:
-        condition: service_healthy
-    networks:
-      - l2-network
-    command:
-      - /bin/bash
-      - -c
-      - |
-        docker-php-ext-install mysqli pdo pdo_mysql > /dev/null
-        while [ ! -d "/app/site" ]; do
-          sleep 2
-        done
-        rm -rf /var/www/html/*
-        cp -r /app/site/. /var/www/html/
-        chown -R www-data:www-data /var/www/html
-        exec apache2-foreground
-
-
 volumes:
   l2_db_data:
   l2_app_data:
 
 networks:
   l2-network:
+    name: l2-network
     driver: bridge
+
