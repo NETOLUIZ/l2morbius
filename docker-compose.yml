@@ -90,6 +90,7 @@ services:
         while [ ! -d "/app/dist" ]; do
           sleep 2
         done
+        cd /app && git pull origin main || true
         dos2unix /app/docker/entrypoint.sh
         chmod +x /app/docker/entrypoint.sh
         exec /app/docker/entrypoint.sh
