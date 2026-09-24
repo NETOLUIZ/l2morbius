@@ -109,7 +109,7 @@ services:
       LOGIN_PORT: "2106"
       GAME_PORT: "7777"
     ports:
-      - "80:80"
+      - "8090:80"
     volumes:
       - l2_app_data:/app
     depends_on:
@@ -121,11 +121,7 @@ services:
       - /bin/bash
       - -c
       - |
-        apt-get update -qq && apt-get install -y -qq git > /dev/null
         docker-php-ext-install mysqli pdo pdo_mysql > /dev/null
-        if [ -d "/app/.git" ]; then
-          cd /app && git fetch origin && git reset --hard origin/main || true
-        fi
         while [ ! -d "/app/site" ]; do
           sleep 2
         done
