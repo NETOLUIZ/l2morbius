@@ -48,7 +48,7 @@ services:
         if [ ! -d "/app/dist" ]; then
           git clone --depth 1 https://github.com/NETOLUIZ/l2morbius.git /app
         else
-          cd /app && git pull
+          cd /app && git fetch origin && git reset --hard origin/main
         fi
         dos2unix /app/docker/entrypoint.sh
         chmod +x /app/docker/entrypoint.sh
@@ -90,7 +90,7 @@ services:
         while [ ! -d "/app/dist" ]; do
           sleep 2
         done
-        cd /app && git pull origin main || true
+        cd /app && git fetch origin && git reset --hard origin/main || true
         dos2unix /app/docker/entrypoint.sh
         chmod +x /app/docker/entrypoint.sh
         exec /app/docker/entrypoint.sh
@@ -121,7 +121,11 @@ services:
       - /bin/bash
       - -c
       - |
+        apt-get update -qq && apt-get install -y -qq git > /dev/null
         docker-php-ext-install mysqli pdo pdo_mysql > /dev/null
+        if [ -d "/app/.git" ]; then
+          cd /app && git fetch origin && git reset --hard origin/main || true
+        fi
         while [ ! -d "/app/site" ]; do
           sleep 2
         done
