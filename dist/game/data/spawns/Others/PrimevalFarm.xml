@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn zone="primeval_farm_beach">
+		<territory minZ="-3750" maxZ="-3300">
+			<node x="8500" y="-23800" />
+			<node x="12500" y="-23800" />
+			<node x="13500" y="-21000" />
+			<node x="9500" y="-21000" />
+		</territory>
+		<npc id="60001" count="15" respawnDelay="25" /> <!-- Primeval Medal Hunter -->
+	</spawn>
+	<spawn zone="primeval_farm_coast">
+		<territory minZ="-3650" maxZ="-3100">
+			<node x="11000" y="-21000" />
+			<node x="15500" y="-21000" />
+			<node x="15500" y="-18000" />
+			<node x="11000" y="-18000" />
+		</territory>
+		<npc id="60001" count="15" respawnDelay="25" /> <!-- Primeval Medal Hunter -->
+	</spawn>
+	<spawn zone="primeval_farm_plains">
+		<territory minZ="-3400" maxZ="-2800">
+			<node x="13500" y="-18000" />
+			<node x="18000" y="-18000" />
+			<node x="18000" y="-14000" />
+			<node x="13500" y="-14000" />
+		</territory>
+		<npc id="60001" count="15" respawnDelay="25" /> <!-- Primeval Medal Hunter -->
+	</spawn>
+	<spawn name="PrimevalWharf_Buffer">
+		<npc id="50008" x="10430" y="-24520" z="-3645" heading="0" respawnDelay="60" /> <!-- Buffer Thiago at Wharf -->
+	</spawn>
+</list>

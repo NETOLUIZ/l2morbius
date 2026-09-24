@@ -1,0 +1,9 @@
+.git
+.gitignore
+.settings
+.project
+.classpath
+bin
+launcher
+*.launch
+*.log

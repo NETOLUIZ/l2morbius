@@ -1,0 +1,84 @@
+services:
+  mariadb:
+    image: mariadb:11.4
+    container_name: l2-mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-l2jrootpass}
+      MYSQL_DATABASE: ${DB_NAME:-l2jmobiusinterlude}
+    volumes:
+      - l2_db_data:/var/lib/mysql
+      - ./docker/initdb:/docker-entrypoint-initdb.d:ro
+      - ./dist/db_installer/sql:/opt/l2j/sql:ro
+    ports:
+      - "${DB_PORT:-3306}:3306"
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h localhost -u root -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - l2-network
+
+  loginserver:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: l2-loginserver
+    restart: unless-stopped
+    environment:
+      SERVER_TYPE: login
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-l2jmobiusinterlude}
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD:-l2jrootpass}
+      JAVA_XMS: ${LOGIN_JAVA_XMS:-128m}
+      JAVA_XMX: ${LOGIN_JAVA_XMX:-512m}
+    ports:
+      - "2106:2106"
+    volumes:
+      - ./dist:/app/dist
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    networks:
+      - l2-network
+
+  gameserver:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: l2-gameserver
+    restart: unless-stopped
+    environment:
+      SERVER_TYPE: game
+      EXTERNAL_IP: ${EXTERNAL_IP:-127.0.0.1}
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-l2jmobiusinterlude}
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD:-l2jrootpass}
+      LOGIN_HOST: loginserver
+      LOGIN_PORT: 9014
+      PACKET_ENCRYPTION: ${PACKET_ENCRYPTION:-True}
+      JAVA_XMS: ${GAME_JAVA_XMS:-2g}
+      JAVA_XMX: ${GAME_JAVA_XMX:-4g}
+    ports:
+      - "7777:7777"
+    volumes:
+      - ./dist:/app/dist
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      loginserver:
+        condition: service_started
+    networks:
+      - l2-network
+
+volumes:
+  l2_db_data:
+
+networks:
+  l2-network:
+    driver: bridge

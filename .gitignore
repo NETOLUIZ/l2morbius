@@ -1,0 +1,22 @@
+# Build outputs
+/bin/
+build/
+
+# Eclipse
+.settings/
+.project
+.classpath
+
+# Logs
+*.log
+*.lck
+log/
+dist/game/log/
+dist/login/log/
+
+# Backups
+dist/backup/
+backup/
+
+# Sensitive environment files
+.env

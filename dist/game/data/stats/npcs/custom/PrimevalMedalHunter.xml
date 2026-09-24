@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+	<npc id="60001" displayId="22196" level="80" type="Monster" name="Primeval Medal Hunter" usingServerSideName="true" title="Farm Lvl 80" usingServerSideTitle="true">
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<acquire exp="45000" sp="5000" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="22000" hpRegen="15.0" mp="2000" mpRegen="3.5" />
+			<attack physical="1250" magical="750" random="7" critical="8" accuracy="0" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="390" magical="260" />
+			<speed>
+				<walk ground="40" />
+				<run ground="180" />
+			</speed>
+			<hitTime>430</hitTime>
+		</stats>
+		<status undying="false" attackable="true" />
+		<skillList>
+			<skill id="4416" level="3" /> <!-- Beast -->
+			<skill id="4416" level="24" /> <!-- Unknown Creature -->
+		</skillList>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>PRIMEVAL_FARM</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="18" />
+			<height normal="32" />
+		</collision>
+		<dropLists>
+			<drop>
+				<item id="6392" min="10" max="20" chance="100" /> <!-- Event - Medal -->
+				<item id="6393" min="5" max="10" chance="100" /> <!-- Event - Glittering Medal -->
+				<item id="57" min="40000" max="80000" chance="100" /> <!-- Adena -->
+			</drop>
+		</dropLists>
+	</npc>
+</list>

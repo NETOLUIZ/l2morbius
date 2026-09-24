@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="StartingBuffers">
+		<!-- Talking Island - Human Fighter Starting Area -->
+		<npc id="50008" x="-71480" y="258380" z="-3104" heading="42000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+		<!-- Talking Island - Human Mystic Starting Area -->
+		<npc id="50008" x="-91080" y="248080" z="-3560" heading="6000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+		<!-- Elven Village - Elven Starting Area -->
+		<npc id="50008" x="46160" y="41200" z="-3504" heading="17000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+		<!-- Dark Elf Village - Dark Elf Starting Area -->
+		<npc id="50008" x="28384" y="11120" z="-4232" heading="32000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+		<!-- Orc Village - Orc Starting Area -->
+		<npc id="50008" x="-56736" y="-113600" z="-672" heading="0" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+		<!-- Dwarven Village - Dwarven Starting Area -->
+		<npc id="50008" x="108535" y="-173950" z="-408" heading="38000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+	</spawn>
+</list>

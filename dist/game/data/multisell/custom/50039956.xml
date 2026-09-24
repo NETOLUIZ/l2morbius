@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
+	<npcs>
+		<npc>50010</npc>
+	</npcs>
+	<!-- Imperial Crusader Set (Unsealed) -->
+	<item>
+		<ingredient id="6392" count="1000" /> <!-- Event - Medal -->
+		<ingredient id="6393" count="800" /> <!-- Event - Glittering Medal -->
+		<production id="6373" count="1" /> <!-- Imperial Crusader Breastplate -->
+	</item>
+	<item>
+		<ingredient id="6392" count="800" />
+		<ingredient id="6393" count="500" />
+		<production id="6374" count="1" /> <!-- Imperial Crusader Gaiters -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6378" count="1" /> <!-- Imperial Crusader Helmet -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6375" count="1" /> <!-- Imperial Crusader Gauntlets -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6376" count="1" /> <!-- Imperial Crusader Boots -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6377" count="1" /> <!-- Imperial Crusader Shield -->
+	</item>
+
+	<!-- Draconic Leather Set (Unsealed) -->
+	<item>
+		<ingredient id="6392" count="1000" />
+		<ingredient id="6393" count="800" />
+		<production id="6379" count="1" /> <!-- Draconic Leather Armor -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6382" count="1" /> <!-- Draconic Leather Helmet -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6380" count="1" /> <!-- Draconic Leather Gloves -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6381" count="1" /> <!-- Draconic Leather Boots -->
+	</item>
+
+	<!-- Major Arcana Set (Unsealed) -->
+	<item>
+		<ingredient id="6392" count="1000" />
+		<ingredient id="6393" count="800" />
+		<production id="6383" count="1" /> <!-- Major Arcana Robe -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6386" count="1" /> <!-- Major Arcana Circlet -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6384" count="1" /> <!-- Major Arcana Gloves -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6385" count="1" /> <!-- Major Arcana Boots -->
+	</item>
+
+	<!-- Sealed Items -->
+	<item>
+		<ingredient id="6392" count="1000" />
+		<ingredient id="6393" count="800" />
+		<production id="6674" count="1" /> <!-- Sealed Imperial Crusader Breastplate -->
+	</item>
+	<item>
+		<ingredient id="6392" count="800" />
+		<ingredient id="6393" count="500" />
+		<production id="6675" count="1" /> <!-- Sealed Imperial Crusader Gaiters -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6679" count="1" /> <!-- Sealed Imperial Crusader Helmet -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6676" count="1" /> <!-- Sealed Imperial Crusader Gauntlets -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6677" count="1" /> <!-- Sealed Imperial Crusader Boots -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6678" count="1" /> <!-- Sealed Imperial Crusader Shield -->
+	</item>
+	<item>
+		<ingredient id="6392" count="1000" />
+		<ingredient id="6393" count="800" />
+		<production id="6680" count="1" /> <!-- Sealed Draconic Leather Armor -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6683" count="1" /> <!-- Sealed Draconic Leather Helmet -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6681" count="1" /> <!-- Sealed Draconic Leather Gloves -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6682" count="1" /> <!-- Sealed Draconic Leather Boots -->
+	</item>
+	<item>
+		<ingredient id="6392" count="1000" />
+		<ingredient id="6393" count="800" />
+		<production id="6684" count="1" /> <!-- Sealed Major Arcana Robe -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6687" count="1" /> <!-- Sealed Major Arcana Circlet -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6685" count="1" /> <!-- Sealed Major Arcana Gloves -->
+	</item>
+	<item>
+		<ingredient id="6392" count="500" />
+		<ingredient id="6393" count="300" />
+		<production id="6686" count="1" /> <!-- Sealed Major Arcana Boots -->
+	</item>
+</list>

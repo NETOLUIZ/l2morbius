@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="22_22">
+		<npc id="50008" x="83044" y="147913" z="-3495" heading="32767" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+		<npc id="50009" x="83659" y="147998" z="-3431" heading="32136" respawnDelay="60" /> <!-- Fiorella - Global Gatekeeper -->
+		<npc id="50010" x="82400" y="148544" z="-3495" heading="25939" respawnDelay="60" /> <!-- Mirellas - General Shop -->
+		<npc id="31049" x="82403" y="148797" z="-3495" heading="59899" respawnDelay="60" /> <!-- Pepper - Symbol Maker -->
+	</spawn>
+</list>
