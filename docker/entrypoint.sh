@@ -6,7 +6,7 @@ DB_PORT=${DB_PORT:-3306}
 DB_USER=${DB_USER:-root}
 DB_PASSWORD=${DB_PASSWORD:-l2jrootpass}
 DB_NAME=${DB_NAME:-l2jmobiusinterlude}
-EXTERNAL_IP=${EXTERNAL_IP:-127.0.0.1}
+EXTERNAL_IP=${EXTERNAL_IP:-2.24.108.110}
 
 echo "=========================================================="
 echo " Starting L2J Mobius Server: ${SERVER_TYPE^^}"
@@ -19,6 +19,27 @@ until nc -z -v -w5 "${DB_HOST}" "${DB_PORT}" 2>/dev/null; do
     sleep 3
 done
 echo "[+] Conexão com o banco de dados estabelecida com sucesso!"
+
+# 2. Verifica se o banco de dados precisa ser populado
+if command -v mariadb &> /dev/null; then
+    TABLE_COUNT=$(mariadb -h "${DB_HOST}" -P "${DB_PORT}" -u "${DB_USER}" -p"${DB_PASSWORD}" "${DB_NAME}" -sse "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='${DB_NAME}';" 2>/dev/null || echo "0")
+    if [ "$TABLE_COUNT" = "0" ] || [ -z "$TABLE_COUNT" ]; then
+        echo "[*] Banco de dados vazio. Instalando tabelas do Mobius automaticamente..."
+        if [ -d "/app/dist/db_installer/sql/login" ]; then
+            for f in /app/dist/db_installer/sql/login/*.sql; do
+                [ -f "$f" ] && mariadb -h "${DB_HOST}" -P "${DB_PORT}" -u "${DB_USER}" -p"${DB_PASSWORD}" "${DB_NAME}" < "$f" 2>/dev/null || true
+            done
+        fi
+        if [ -d "/app/dist/db_installer/sql/game" ]; then
+            for f in /app/dist/db_installer/sql/game/*.sql; do
+                [ -f "$f" ] && mariadb -h "${DB_HOST}" -P "${DB_PORT}" -u "${DB_USER}" -p"${DB_PASSWORD}" "${DB_NAME}" < "$f" 2>/dev/null || true
+            done
+        fi
+        echo "[+] Tabelas instaladas com sucesso!"
+    else
+        echo "[+] Banco de dados já possui ${TABLE_COUNT} tabelas."
+    fi
+fi
 
 # Função para atualizar Database.ini
 update_database_config() {
@@ -43,7 +64,6 @@ if [ "$SERVER_TYPE" = "login" ]; then
         sed -i "s|^LoginHostname = .*|LoginHostname = 0.0.0.0|g" "config/Server.ini"
     fi
 
-    # Limpa logs antigos
     mkdir -p log
 
     JAVA_OPT="-server -Dfile.encoding=UTF-8 -XX:+UseZGC -Xms${JAVA_XMS:-128m} -Xmx${JAVA_XMX:-512m}"
@@ -90,7 +110,6 @@ EOF
     done
     echo "[+] LoginServer detectado!"
 
-    # Limpa logs antigos
     mkdir -p log
 
     JAVA_OPT="-server -Dfile.encoding=UTF-8 -Djava.util.logging.manager=org.l2jmobius.log.ServerLogManager -Dorg.slf4j.simpleLogger.log.com.zaxxer.hikari=warn -XX:+UseZGC -Xms${JAVA_XMS:-2g} -Xmx${JAVA_XMX:-4g}"
