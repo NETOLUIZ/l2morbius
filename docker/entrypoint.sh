@@ -76,6 +76,11 @@ elif [ "$SERVER_TYPE" = "game" ]; then
     # Configura o banco
     update_database_config "config/Database.ini"
 
+    # Remove qualquer spawn residual do mob 60001 no banco
+    if command -v mariadb &> /dev/null; then
+        mariadb -h "${DB_HOST}" -P "${DB_PORT}" -u "${DB_USER}" -p"${DB_PASSWORD}" "${DB_NAME}" -e "DELETE FROM spawnlist WHERE npc_templateid=60001; DELETE FROM custom_spawnlist WHERE npc_templateid=60001;" 2>/dev/null || true
+    fi
+
     # Configura o endereço do LoginServer
     LOGIN_HOST=${LOGIN_HOST:-loginserver}
     LOGIN_PORT=${LOGIN_PORT:-9014}
