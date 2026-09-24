@@ -146,6 +146,9 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
 		<set name="price" val="500000" />
+		<skills>
+			<skill id="10002" level="1" />
+		</skills>
 	</item>
 	<item id="8916" type="Armor" name="Eye Patch">
 		<!-- One eye patch accessory. -->

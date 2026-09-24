@@ -31,4 +31,18 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="10002" levels="1" name="Luxurious Silver Circlet">
+		<!-- Luxurious Silver Circlet: P. Atk. +15%, Atk. Spd. +15%, Critical Rate +15% -->
+		<icon>icon.Accessary_gold_circlet_i01</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>75</magicLevel>
+		<effects>
+			<effect name="Buff">
+				<mul stat="pAtk">1.15</mul>
+				<mul stat="pAtkSpd">1.15</mul>
+				<mul stat="critRate">1.15</mul>
+			</effect>
+		</effects>
+	</skill>
 </list>
