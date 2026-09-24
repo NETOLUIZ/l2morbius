@@ -4,6 +4,22 @@
 		<npc>50010</npc>
 	</npcs>
 	<item>
+		<ingredient id="57" count="4300000" />
+		<production id="84" count="1" />
+	</item>
+	<item>
+		<ingredient id="57" count="4300000" />
+		<production id="6313" count="1" />
+	</item>
+	<item>
+		<ingredient id="57" count="4300000" />
+		<production id="6314" count="1" />
+	</item>
+	<item>
+		<ingredient id="57" count="4300000" />
+		<production id="6315" count="1" />
+	</item>
+	<item>
 		<ingredient id="57" count="2290000" />
 		<production id="4734" count="1" />
 	</item>
