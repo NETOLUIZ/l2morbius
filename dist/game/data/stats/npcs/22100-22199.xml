@@ -6064,6 +6064,9 @@
 		</ai>
 		<dropLists>
 			<drop>
+				<item id="6392" min="10" max="20" chance="100" /> <!-- Event - Medal -->
+				<item id="6393" min="5" max="10" chance="100" /> <!-- Event - Glittering Medal -->
+				<item id="57" min="40000" max="80000" chance="100" /> <!-- Adena -->
 				<group chance="70">
 					<item id="57" min="13610" max="27100" chance="100" /> <!-- Adena -->
 				</group>
@@ -6119,6 +6122,9 @@
 		</ai>
 		<dropLists>
 			<drop>
+				<item id="6392" min="10" max="20" chance="100" /> <!-- Event - Medal -->
+				<item id="6393" min="5" max="10" chance="100" /> <!-- Event - Glittering Medal -->
+				<item id="57" min="40000" max="80000" chance="100" /> <!-- Adena -->
 				<group chance="70">
 					<item id="57" min="5818" max="11870" chance="100" /> <!-- Adena -->
 				</group>
@@ -6189,6 +6195,9 @@
 		</ai>
 		<dropLists>
 			<drop>
+				<item id="6392" min="10" max="20" chance="100" /> <!-- Event - Medal -->
+				<item id="6393" min="5" max="10" chance="100" /> <!-- Event - Glittering Medal -->
+				<item id="57" min="40000" max="80000" chance="100" /> <!-- Adena -->
 				<group chance="70">
 					<item id="57" min="10320" max="31550" chance="100" /> <!-- Adena -->
 				</group>
@@ -6258,6 +6267,9 @@
 		</ai>
 		<dropLists>
 			<drop>
+				<item id="6392" min="10" max="20" chance="100" /> <!-- Event - Medal -->
+				<item id="6393" min="5" max="10" chance="100" /> <!-- Event - Glittering Medal -->
+				<item id="57" min="40000" max="80000" chance="100" /> <!-- Adena -->
 				<group chance="70">
 					<item id="57" min="18210" max="54000" chance="100" /> <!-- Adena -->
 				</group>
