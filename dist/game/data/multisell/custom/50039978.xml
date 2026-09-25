@@ -35,4 +35,8 @@
 		<ingredient id="57" count="35000" />
 		<production id="8615" count="1" />
 	</item>
+	<item>
+		<ingredient id="57" count="240" />
+		<production id="2508" count="1" />
+	</item>
 </list>

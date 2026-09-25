@@ -6,8 +6,6 @@
 		<abnormalTime>15</abnormalTime>
 		<displayId>2288</displayId>
 		<isMagic>2</isMagic> <!-- Static Skill -->
-		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>726</itemConsumeId>
 		<magicLevel>1</magicLevel>
 		<reuseDelay>10000</reuseDelay>
 		<effects>
@@ -21,13 +19,11 @@
 		<targetType>SELF</targetType>
 		<displayId>2288</displayId>
 		<isMagic>2</isMagic> <!-- Static Skill -->
-		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>728</itemConsumeId>
 		<magicLevel>1</magicLevel>
 		<reuseDelay>500</reuseDelay>
 		<effects>
-			<effect name="ManaHeal">
-				<power>100</power>
+			<effect name="ManaHealPercent">
+				<power>35</power>
 			</effect>
 		</effects>
 	</skill>
@@ -56,6 +52,28 @@
 				<mul stat="mAtk">1.15</mul>
 				<mul stat="mAtkSpd">1.30</mul>
 				<mul stat="regMp">1.30</mul>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="10004" levels="1" name="Server Stats Boost">
+		<icon>icon.skill0000</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Buff">
+				<mul stat="pAtk">1.10</mul>
+				<mul stat="pDef">1.10</mul>
+				<mul stat="mAtk">1.10</mul>
+				<mul stat="mDef">1.10</mul>
+				<mul stat="maxHp">1.10</mul>
+				<mul stat="maxMp">1.10</mul>
+				<mul stat="maxCp">1.10</mul>
+				<mul stat="runSpd">1.10</mul>
+				<mul stat="pAtkSpd">1.20</mul>
+				<mul stat="mAtkSpd">1.20</mul>
+				<mul stat="critRate">1.20</mul>
+				<mul stat="mCritRate">1.20</mul>
 			</effect>
 		</effects>
 	</skill>
