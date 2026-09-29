@@ -29,6 +29,8 @@ import org.l2jmobius.gameserver.entity.actor.Player;
 import org.l2jmobius.gameserver.handler.IVoicedCommandHandler;
 import org.l2jmobius.gameserver.handler.VoicedCommandHandler;
 import org.l2jmobius.gameserver.mechanics.script.Script;
+import org.l2jmobius.gameserver.mechanics.skill.BuffInfo;
+import org.l2jmobius.gameserver.mechanics.skill.Skill;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.smartbot.SmartBotManager;
 import org.l2jmobius.gameserver.smartbot.model.SmartBotData;
@@ -238,6 +240,51 @@ public class SmartBotNpc extends Script implements IVoicedCommandHandler
 				showMainHtml(player, npc);
 				break;
 			}
+			case "copy_buffs":
+			{
+				final List<Player> bots = SmartBotManager.getInstance().getBotsByOwner(player);
+				if (bots.isEmpty())
+				{
+					player.sendMessage("Voce nao possui nenhum bot ativo.");
+					showMainHtml(player, npc);
+					break;
+				}
+				
+				int count = 0;
+				for (BuffInfo info : player.getEffectList().getEffects())
+				{
+					final Skill skill = info.getSkill();
+					if ((skill != null) && !skill.isDebuff() && !skill.isPassive() && !skill.isToggle())
+					{
+						for (Player bot : bots)
+						{
+							if (bot.isOnline() && (player.calculateDistance2D(bot) < 1500))
+							{
+								skill.applyEffects(player, bot);
+							}
+						}
+						count++;
+					}
+				}
+				player.sendMessage(count + " buffs copiados para os seus bots!");
+				showMainHtml(player, npc);
+				break;
+			}
+			case "heal_bots":
+			{
+				final List<Player> bots = SmartBotManager.getInstance().getBotsByOwner(player);
+				for (Player bot : bots)
+				{
+					if (bot.isOnline() && (player.calculateDistance2D(bot) < 1500))
+					{
+						bot.setCurrentHpMp(bot.getMaxHp(), bot.getMaxMp());
+						bot.setCurrentCp(bot.getMaxCp());
+					}
+				}
+				player.sendMessage("Todos os seus bots foram curados!");
+				showMainHtml(player, npc);
+				break;
+			}
 		}
 		
 		return null;
@@ -314,6 +361,10 @@ public class SmartBotNpc extends Script implements IVoicedCommandHandler
 			sb.append("<td align=center><button value=\"Todos Seguir\" action=\"").append(bypassPrefix).append("all_follow\" width=85 height=21 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
 			sb.append("<td align=center><button value=\"Todos Assist\" action=\"").append(bypassPrefix).append("all_assist\" width=85 height=21 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
 			sb.append("<td align=center><button value=\"Todos Puxar\" action=\"").append(bypassPrefix).append("all_recall\" width=85 height=21 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
+			sb.append("</tr><tr>");
+			sb.append("<td align=center colspan=3><button value=\"Copiar Meus Buffs para os Bots\" action=\"").append(bypassPrefix).append("copy_buffs\" width=220 height=22 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("</tr><tr>");
+			sb.append("<td align=center colspan=3><button value=\"Curar Todos os Bots (HP/MP)\" action=\"").append(bypassPrefix).append("heal_bots\" width=220 height=22 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
 			sb.append("</tr></table>");
 		}
 		

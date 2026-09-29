@@ -31,6 +31,7 @@ import java.util.StringTokenizer;
 import org.l2jmobius.commons.util.StringUtil;
 import org.l2jmobius.gameserver.config.PlayerConfig;
 import org.l2jmobius.gameserver.config.custom.SchemeBufferConfig;
+import org.l2jmobius.gameserver.config.custom.SmartBotConfig;
 import org.l2jmobius.gameserver.data.SchemeBufferTable;
 import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.entity.actor.Creature;
@@ -42,6 +43,7 @@ import org.l2jmobius.gameserver.entity.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.entity.item.enums.ItemProcessType;
 import org.l2jmobius.gameserver.mechanics.skill.Skill;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2jmobius.gameserver.smartbot.SmartBotManager;
 import org.l2jmobius.gameserver.util.HtmlUtil;
 
 /**
@@ -66,6 +68,7 @@ public class SchemeBuffer extends Npc
 	// HTML layout.
 	private static final int HTML_WIDTH = 280;
 	private static final int HTML_HALF_WIDTH = 140;
+	private static final int HTML_THIRD_WIDTH = 93;
 	private static final int HTML_NAV_CELL_WIDTH = 70;
 	private static final int HTML_PAGE_CELL_WIDTH = 100;
 	private static final int HTML_ICON_CELL_SIZE = 40;
@@ -120,6 +123,17 @@ public class SchemeBuffer extends Npc
 				summon.stopAllEffects();
 			}
 			
+			if (SmartBotConfig.ENABLE_SMART_BOT)
+			{
+				for (Player bot : SmartBotManager.getInstance().getBotsByOwner(player))
+				{
+					if (bot.isOnline() && (player.calculateDistance2D(bot) < 1500))
+					{
+						bot.stopAllEffects();
+					}
+				}
+			}
+			
 			showMainMenu(player);
 			return;
 		}
@@ -132,6 +146,18 @@ public class SchemeBuffer extends Npc
 			if (summon != null)
 			{
 				summon.setCurrentHpMp(summon.getMaxHp(), summon.getMaxMp());
+			}
+			
+			if (SmartBotConfig.ENABLE_SMART_BOT)
+			{
+				for (Player bot : SmartBotManager.getInstance().getBotsByOwner(player))
+				{
+					if (bot.isOnline() && (player.calculateDistance2D(bot) < 1500))
+					{
+						bot.setCurrentHpMp(bot.getMaxHp(), bot.getMaxMp());
+						bot.setCurrentCp(bot.getMaxCp());
+					}
+				}
 			}
 			
 			showMainMenu(player);
@@ -159,14 +185,30 @@ public class SchemeBuffer extends Npc
 			final int cost = getFee(scheme);
 			
 			Creature target = player;
-			if (tokenizer.hasMoreTokens() && "pet".equalsIgnoreCase(tokenizer.nextToken()))
+			boolean targetBots = false;
+			if (tokenizer.hasMoreTokens())
 			{
-				target = player.getSummon();
+				final String targetToken = tokenizer.nextToken();
+				if ("pet".equalsIgnoreCase(targetToken))
+				{
+					target = player.getSummon();
+				}
+				else if ("bot".equalsIgnoreCase(targetToken) || "bots".equalsIgnoreCase(targetToken))
+				{
+					targetBots = true;
+				}
 			}
 			
-			if (target == null)
+			if (!targetBots && (target == null))
 			{
 				player.sendMessage("You don't have a pet.");
+				return;
+			}
+			
+			final List<Player> bots = (targetBots && SmartBotConfig.ENABLE_SMART_BOT) ? SmartBotManager.getInstance().getBotsByOwner(player) : null;
+			if (targetBots && ((bots == null) || bots.isEmpty()))
+			{
+				player.sendMessage("Voce nao possui nenhum bot ativo.");
 				return;
 			}
 			
@@ -183,8 +225,26 @@ public class SchemeBuffer extends Npc
 					final Skill skill = skillData.getSkill(skillId, holder.getLevel());
 					if (skill != null)
 					{
-						skill.applyEffects(this, target);
+						if (targetBots)
+						{
+							for (Player bot : bots)
+							{
+								if (bot.isOnline() && (player.calculateDistance2D(bot) < 1500))
+								{
+									skill.applyEffects(this, bot);
+								}
+							}
+						}
+						else
+						{
+							skill.applyEffects(this, target);
+						}
 					}
+				}
+				
+				if (targetBots)
+				{
+					player.sendMessage("Buffs aplicados aos seus bots com sucesso!");
 				}
 			}
 			return;
@@ -374,8 +434,9 @@ public class SchemeBuffer extends Npc
 				final int page = Integer.parseInt(tokenizer.nextToken());
 				final String targetType = tokenizer.nextToken();
 				
+				final boolean isBots = "bot".equalsIgnoreCase(targetType) || "bots".equalsIgnoreCase(targetType);
 				final Creature target = "pet".equalsIgnoreCase(targetType) ? player.getSummon() : player;
-				if (target == null)
+				if (!isBots && (target == null))
 				{
 					player.sendMessage("You don't have a pet.");
 					showManualWindow(player, category, page, targetType);
@@ -388,7 +449,21 @@ public class SchemeBuffer extends Npc
 					final Skill skill = skillData.getSkill(skillId, holder.getLevel());
 					if (skill != null)
 					{
-						skill.applyEffects(this, target);
+						if (isBots)
+						{
+							final List<Player> bots = SmartBotManager.getInstance().getBotsByOwner(player);
+							for (Player bot : bots)
+							{
+								if (bot.isOnline() && (player.calculateDistance2D(bot) < 1500))
+								{
+									skill.applyEffects(this, bot);
+								}
+							}
+						}
+						else
+						{
+							skill.applyEffects(this, target);
+						}
 					}
 				}
 				
@@ -456,6 +531,10 @@ public class SchemeBuffer extends Npc
 				
 				htmlBuilder.append("<a action=\"bypass -h npc_%objectId%_givebuffs;").append(scheme.getKey()).append(';').append(cost).append("\">Use on Me</a>&nbsp;|&nbsp;");
 				htmlBuilder.append("<a action=\"bypass -h npc_%objectId%_givebuffs;").append(scheme.getKey()).append(';').append(cost).append(";pet\">Use on Pet</a>&nbsp;|&nbsp;");
+				if (SmartBotConfig.ENABLE_SMART_BOT)
+				{
+					htmlBuilder.append("<a action=\"bypass -h npc_%objectId%_givebuffs;").append(scheme.getKey()).append(';').append(cost).append(";bot\">Use on Bots</a>&nbsp;|&nbsp;");
+				}
 				htmlBuilder.append("<a action=\"bypass -h npc_%objectId%_editschemes;Buffs;").append(scheme.getKey()).append(";1\">Edit</a>&nbsp;|&nbsp;");
 				htmlBuilder.append("<a action=\"bypass -h npc_%objectId%_deletescheme;").append(scheme.getKey()).append("\">Delete</a><br>");
 			}
@@ -524,9 +603,12 @@ public class SchemeBuffer extends Npc
 		
 		final StringBuilder htmlBuilder = new StringBuilder(skillIds.size() * 200);
 		
+		final boolean hasBots = SmartBotConfig.ENABLE_SMART_BOT && !SmartBotManager.getInstance().getBotsByOwner(player).isEmpty();
+		final int colWidth = hasBots ? HTML_THIRD_WIDTH : HTML_HALF_WIDTH;
+		
 		htmlBuilder.append("<table width=\"").append(HTML_WIDTH).append("\"><tr>");
 		
-		htmlBuilder.append("<td width=\"").append(HTML_HALF_WIDTH).append("\" align=\"center\">");
+		htmlBuilder.append("<td width=\"").append(colWidth).append("\" align=\"center\">");
 		if ("me".equalsIgnoreCase(targetType))
 		{
 			htmlBuilder.append("<font color=\"LEVEL\">Me</font>");
@@ -537,7 +619,7 @@ public class SchemeBuffer extends Npc
 		}
 		htmlBuilder.append("</td>");
 		
-		htmlBuilder.append("<td width=\"").append(HTML_HALF_WIDTH).append("\" align=\"center\">");
+		htmlBuilder.append("<td width=\"").append(colWidth).append("\" align=\"center\">");
 		if ("pet".equalsIgnoreCase(targetType))
 		{
 			htmlBuilder.append("<font color=\"LEVEL\">Pet</font>");
@@ -547,6 +629,20 @@ public class SchemeBuffer extends Npc
 			htmlBuilder.append("<a action=\"bypass -h npc_").append(getObjectId()).append("_manual;").append(category).append(';').append(page).append(";pet\">Pet</a>");
 		}
 		htmlBuilder.append("</td>");
+		
+		if (hasBots)
+		{
+			htmlBuilder.append("<td width=\"").append(colWidth).append("\" align=\"center\">");
+			if ("bots".equalsIgnoreCase(targetType) || "bot".equalsIgnoreCase(targetType))
+			{
+				htmlBuilder.append("<font color=\"LEVEL\">Bots</font>");
+			}
+			else
+			{
+				htmlBuilder.append("<a action=\"bypass -h npc_").append(getObjectId()).append("_manual;").append(category).append(';').append(page).append(";bots\">Bots</a>");
+			}
+			htmlBuilder.append("</td>");
+		}
 		
 		htmlBuilder.append("</tr></table><br1>");
 		
@@ -617,6 +713,51 @@ public class SchemeBuffer extends Npc
 	{
 		final SchemeBufferTable schemeBufferTable = SchemeBufferTable.getInstance();
 		final SkillData skillData = SkillData.getInstance();
+		
+		if ("bot".equalsIgnoreCase(targetType) || "bots".equalsIgnoreCase(targetType))
+		{
+			if (!SmartBotConfig.ENABLE_SMART_BOT)
+			{
+				player.sendMessage("SmartBot nao esta ativado.");
+				showMainMenu(player);
+				return;
+			}
+			
+			final List<Player> bots = SmartBotManager.getInstance().getBotsByOwner(player);
+			if (bots.isEmpty())
+			{
+				player.sendMessage("Voce nao possui nenhum bot ativo.");
+				showMainMenu(player);
+				return;
+			}
+			
+			for (Player bot : bots)
+			{
+				if (!bot.isOnline() || (player.calculateDistance2D(bot) >= 1500))
+				{
+					continue;
+				}
+				
+				final String category = bot.isMageClass() ? AUTO_BUFF_MAGE_GROUP : AUTO_BUFF_FIGHTER_GROUP;
+				final List<Integer> skillIds = schemeBufferTable.getSkillsIdsByType(category);
+				for (int skillId : skillIds)
+				{
+					final BuffSkillHolder holder = schemeBufferTable.getAvailableBuff(category, skillId);
+					if (holder != null)
+					{
+						final Skill skill = skillData.getSkill(skillId, holder.getLevel());
+						if (skill != null)
+						{
+							skill.applyEffects(this, bot);
+						}
+					}
+				}
+			}
+			
+			player.sendMessage("Auto buff aplicado aos seus bots com sucesso!");
+			showMainMenu(player);
+			return;
+		}
 		
 		final Creature target = "pet".equalsIgnoreCase(targetType) ? player.getSummon() : player;
 		if (target == null)

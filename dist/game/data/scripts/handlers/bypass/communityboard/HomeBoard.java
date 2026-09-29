@@ -38,6 +38,7 @@ import org.l2jmobius.commons.threads.ThreadPool;
 import org.l2jmobius.gameserver.cache.HtmCache;
 import org.l2jmobius.gameserver.config.custom.CommunityBoardConfig;
 import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
+import org.l2jmobius.gameserver.config.custom.SmartBotConfig;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.data.xml.MultisellData;
@@ -55,6 +56,7 @@ import org.l2jmobius.gameserver.mechanics.skill.Skill;
 import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2jmobius.gameserver.network.serverpackets.SellList;
 import org.l2jmobius.gameserver.network.serverpackets.ShowBoard;
+import org.l2jmobius.gameserver.smartbot.SmartBotManager;
 
 /**
  * Home board.
@@ -224,6 +226,16 @@ public class HomeBoard implements IParseBoardHandler
 				if (pet != null)
 				{
 					targets.add(pet);
+				}
+				if (SmartBotConfig.ENABLE_SMART_BOT)
+				{
+					for (Player bot : SmartBotManager.getInstance().getBotsByOwner(player))
+					{
+						if (bot.isOnline() && (player.calculateDistance2D(bot) < 1500))
+						{
+							targets.add(bot);
+						}
+					}
 				}
 				
 				for (int i = 0; i < buffCount; i++)
