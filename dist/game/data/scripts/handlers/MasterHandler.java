@@ -180,6 +180,7 @@ import handlers.chat.commands.admin.AdminShowQuests;
 import handlers.chat.commands.admin.AdminShutdown;
 import handlers.chat.commands.admin.AdminSiege;
 import handlers.chat.commands.admin.AdminSkill;
+import handlers.chat.commands.admin.AdminSmartbot;
 import handlers.chat.commands.admin.AdminSpawn;
 import handlers.chat.commands.admin.AdminSummon;
 import handlers.chat.commands.admin.AdminSuperHaste;
@@ -394,6 +395,7 @@ public class MasterHandler
 			AdminShutdown.class,
 			AdminSiege.class,
 			AdminSkill.class,
+			AdminSmartbot.class,
 			AdminSpawn.class,
 			AdminSummon.class,
 			AdminSuperHaste.class,

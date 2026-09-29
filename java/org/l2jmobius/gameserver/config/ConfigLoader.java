@@ -135,5 +135,6 @@ public class ConfigLoader
 		WarehouseSortingConfig.load();
 		WeddingConfig.load();
 		RebirthConfig.load();
+		org.l2jmobius.gameserver.config.custom.SmartBotConfig.load();
 	}
 }

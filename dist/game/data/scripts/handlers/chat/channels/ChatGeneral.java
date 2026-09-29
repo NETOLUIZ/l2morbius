@@ -20,6 +20,7 @@ import java.util.StringTokenizer;
 
 import org.l2jmobius.gameserver.config.GeneralConfig;
 import org.l2jmobius.gameserver.config.custom.FactionSystemConfig;
+import org.l2jmobius.gameserver.config.custom.SmartBotConfig;
 import org.l2jmobius.gameserver.entity.World;
 import org.l2jmobius.gameserver.entity.actor.Player;
 import org.l2jmobius.gameserver.entity.actor.holders.player.BlockList;
@@ -29,6 +30,7 @@ import org.l2jmobius.gameserver.handler.VoicedCommandHandler;
 import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.CreatureSay;
+import org.l2jmobius.gameserver.smartbot.BotLlmService;
 
 /**
  * General Chat Handler.
@@ -119,6 +121,11 @@ public class ChatGeneral implements IChatHandler
 			});
 			
 			activeChar.sendPacket(cs);
+			
+			if (SmartBotConfig.ENABLE_SMART_BOT)
+			{
+				BotLlmService.getInstance().handlePlayerAllChat(activeChar, text);
+			}
 		}
 	}
 	

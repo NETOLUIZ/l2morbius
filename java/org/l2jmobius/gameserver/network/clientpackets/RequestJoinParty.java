@@ -21,6 +21,7 @@
 package org.l2jmobius.gameserver.network.clientpackets;
 
 import org.l2jmobius.gameserver.config.GeneralConfig;
+import org.l2jmobius.gameserver.config.custom.SmartBotConfig;
 import org.l2jmobius.gameserver.entity.World;
 import org.l2jmobius.gameserver.entity.actor.Player;
 import org.l2jmobius.gameserver.entity.actor.holders.player.BlockList;
@@ -30,6 +31,7 @@ import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.serverpackets.ActionFailed;
 import org.l2jmobius.gameserver.network.serverpackets.AskJoinParty;
 import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
+import org.l2jmobius.gameserver.smartbot.SmartBotManager;
 
 /**
  * sample 29 42 00 00 10 01 00 00 00 format cdd
@@ -60,6 +62,12 @@ public class RequestJoinParty extends ClientPacket
 		if (target == null)
 		{
 			requestor.sendPacket(SystemMessageId.YOU_MUST_FIRST_SELECT_A_USER_TO_INVITE_TO_YOUR_PARTY);
+			return;
+		}
+		
+		if (SmartBotConfig.ENABLE_SMART_BOT && SmartBotManager.getInstance().isBot(target))
+		{
+			SmartBotManager.getInstance().handlePartyInvite(requestor, target, _partyDistributionTypeId);
 			return;
 		}
 		

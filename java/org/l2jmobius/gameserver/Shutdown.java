@@ -32,7 +32,9 @@ import org.l2jmobius.gameserver.config.ServerConfig;
 import org.l2jmobius.gameserver.config.custom.AutoPlayConfig;
 import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
 import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
+import org.l2jmobius.gameserver.config.custom.SmartBotConfig;
 import org.l2jmobius.gameserver.data.SchemeBufferTable;
+import org.l2jmobius.gameserver.smartbot.SmartBotManager;
 import org.l2jmobius.gameserver.data.sql.ClanTable;
 import org.l2jmobius.gameserver.data.sql.OfflinePlayTable;
 import org.l2jmobius.gameserver.data.sql.OfflineTraderTable;
@@ -371,6 +373,19 @@ public class Shutdown extends Thread
 		catch (Throwable t)
 		{
 			LOGGER.log(Level.WARNING, "Error saving offline play groups.", t);
+		}
+		
+		try
+		{
+			if (SmartBotConfig.ENABLE_SMART_BOT)
+			{
+				SmartBotManager.getInstance().saveAll();
+				LOGGER.info("SmartBotManager: Bots saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+			}
+		}
+		catch (Throwable t)
+		{
+			LOGGER.log(Level.WARNING, "Error saving smart bots.", t);
 		}
 		
 		try

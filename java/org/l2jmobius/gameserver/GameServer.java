@@ -47,6 +47,7 @@ import org.l2jmobius.gameserver.config.custom.OfflinePlayConfig;
 import org.l2jmobius.gameserver.config.custom.OfflineTradeConfig;
 import org.l2jmobius.gameserver.config.custom.PremiumSystemConfig;
 import org.l2jmobius.gameserver.config.custom.SellBuffsConfig;
+import org.l2jmobius.gameserver.config.custom.SmartBotConfig;
 import org.l2jmobius.gameserver.config.custom.WeddingConfig;
 import org.l2jmobius.gameserver.data.AugmentationData;
 import org.l2jmobius.gameserver.data.MerchantPriceConfigTable;
@@ -158,6 +159,7 @@ import org.l2jmobius.gameserver.scripting.ScriptEngine;
 import org.l2jmobius.gameserver.taskmanagers.GameTimeTaskManager;
 import org.l2jmobius.gameserver.taskmanagers.ItemLifeTimeTaskManager;
 import org.l2jmobius.gameserver.taskmanagers.ItemsAutoDestroyTaskManager;
+import org.l2jmobius.gameserver.smartbot.SmartBotManager;
 import org.l2jmobius.gameserver.ui.Gui;
 import org.l2jmobius.gameserver.util.DeadlockWatcher;
 
@@ -408,6 +410,11 @@ public class GameServer
 		if (OfflinePlayConfig.ENABLE_OFFLINE_PLAY_COMMAND && OfflinePlayConfig.RESTORE_AUTO_PLAY_OFFLINERS)
 		{
 			OfflinePlayTable.getInstance().restoreOfflinePlayers();
+		}
+		
+		if (SmartBotConfig.ENABLE_SMART_BOT)
+		{
+			SmartBotManager.getInstance().initialize();
 		}
 		
 		if (ServerConfig.SERVER_RESTART_SCHEDULE_ENABLED)
