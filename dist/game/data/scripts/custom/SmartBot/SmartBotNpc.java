@@ -66,7 +66,14 @@ public class SmartBotNpc extends Script implements IVoicedCommandHandler
 			return false;
 		}
 		
-		showMainHtml(player, null);
+		if (params != null && !params.trim().isEmpty())
+		{
+			onEvent(params.trim(), null, player);
+		}
+		else
+		{
+			showMainHtml(player, null);
+		}
 		return true;
 	}
 	
@@ -242,7 +249,7 @@ public class SmartBotNpc extends Script implements IVoicedCommandHandler
 		final int botCount = ownedBots.size();
 		final int maxBots = SmartBotConfig.MAX_BOTS_PER_PLAYER;
 		final int npcObjId = (npc != null) ? npc.getObjectId() : 0;
-		final String bypassPrefix = (npc != null) ? "bypass -h npc_" + npcObjId + "_quest_SmartBotNpc " : "bypass voiced_bot ";
+		final String bypassPrefix = (npc != null) ? "bypass -h Script SmartBotNpc " : "bypass -h voice .bot ";
 		
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<html><title>SmartBot Manager</title><body><center>");

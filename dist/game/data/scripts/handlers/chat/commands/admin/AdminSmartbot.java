@@ -35,6 +35,7 @@ public class AdminSmartbot implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =
 	{
+		"admin_smartbot",
 		"admin_bot_create",
 		"admin_bot_follow",
 		"admin_bot_unfollow",
@@ -58,6 +59,76 @@ public class AdminSmartbot implements IAdminCommandHandler
 		
 		switch (actualCommand)
 		{
+			case "admin_smartbot":
+			{
+				if (!st.hasMoreTokens())
+				{
+					activeChar.sendMessage("Uso: //smartbot <list|spawn|despawn|reload>");
+					return true;
+				}
+				
+				final String sub = st.nextToken().toLowerCase();
+				switch (sub)
+				{
+					case "list":
+					{
+						final Collection<Player> bots = SmartBotManager.getInstance().getSpawnedBots();
+						activeChar.sendMessage("=== SmartBots Ativos (" + bots.size() + ") ===");
+						for (Player b : bots)
+						{
+							final SmartBotData d = SmartBotManager.getInstance().getBotData(b.getObjectId());
+							final String owner = (d != null && d.getOwnerId() > 0) ? "Dono ID: " + d.getOwnerId() : "GM/Global";
+							activeChar.sendMessage("- " + b.getName() + " (" + (d != null ? d.getPresetName() : "BOT") + ") | " + owner);
+						}
+						return true;
+					}
+					case "spawn":
+					{
+						if (!st.hasMoreTokens())
+						{
+							activeChar.sendMessage("Uso: //smartbot spawn <ARCHER|MAGE|HEALER|BUFFER|DAGGER|TANK> [nome]");
+							return true;
+						}
+						final String pName = st.nextToken().toUpperCase();
+						final SmartBotPreset pr = SmartBotPreset.fromName(pName);
+						if (pr == null)
+						{
+							activeChar.sendMessage("Preset invalido: " + pName);
+							return true;
+						}
+						final String bName = st.hasMoreTokens() ? st.nextToken() : "Bot_" + pr.name();
+						final Player spawned = SmartBotManager.getInstance().createGmBot(bName, pr, activeChar.getX() + 30, activeChar.getY() + 30, activeChar.getZ());
+						if (spawned != null)
+						{
+							activeChar.sendMessage("Bot GM " + bName + " criado!");
+						}
+						return true;
+					}
+					case "despawn":
+					{
+						final Player targetBot = getTargetBot(activeChar);
+						if (targetBot == null)
+						{
+							activeChar.sendMessage("Selecione um SmartBot primeiro.");
+							return true;
+						}
+						SmartBotManager.getInstance().despawnBot(targetBot.getObjectId());
+						activeChar.sendMessage("Bot " + targetBot.getName() + " recolhido.");
+						return true;
+					}
+					case "reload":
+					{
+						SmartBotKnowledge.getInstance().reload();
+						activeChar.sendMessage("Base de conhecimento do SmartBot recarregada!");
+						return true;
+					}
+					default:
+					{
+						activeChar.sendMessage("Subcomando invalido: " + sub);
+						return true;
+					}
+				}
+			}
 			case "admin_bot_create":
 			{
 				if (st.countTokens() < 2)
@@ -199,7 +270,7 @@ public class AdminSmartbot implements IAdminCommandHandler
 	}
 	
 	@Override
-	public String[] getAdminCommandList()
+	public String[] getCommandList()
 	{
 		return ADMIN_COMMANDS;
 	}
