@@ -20,12 +20,15 @@
  */
 package handlers.chat.commands.admin;
 
+import java.util.Collection;
 import java.util.StringTokenizer;
 
 import org.l2jmobius.gameserver.entity.WorldObject;
 import org.l2jmobius.gameserver.entity.actor.Player;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
 import org.l2jmobius.gameserver.smartbot.SmartBotManager;
+import org.l2jmobius.gameserver.smartbot.model.SmartBotData;
+import org.l2jmobius.gameserver.smartbot.model.SmartBotKnowledge;
 import org.l2jmobius.gameserver.smartbot.model.SmartBotPreset;
 
 /**
@@ -118,7 +121,7 @@ public class AdminSmartbot implements IAdminCommandHandler
 					}
 					case "reload":
 					{
-						SmartBotKnowledge.getInstance().reload();
+						SmartBotKnowledge.getInstance().load();
 						activeChar.sendMessage("Base de conhecimento do SmartBot recarregada!");
 						return true;
 					}
