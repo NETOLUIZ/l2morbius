@@ -34,6 +34,8 @@ import org.l2jmobius.gameserver.handler.AdminCommandHandler;
 import org.l2jmobius.gameserver.handler.BypassHandler;
 import org.l2jmobius.gameserver.handler.CommunityBoardHandler;
 import org.l2jmobius.gameserver.handler.IBypassHandler;
+import org.l2jmobius.gameserver.handler.IVoicedCommandHandler;
+import org.l2jmobius.gameserver.handler.VoicedCommandHandler;
 import org.l2jmobius.gameserver.managers.CaptchaManager;
 import org.l2jmobius.gameserver.mechanics.events.EventDispatcher;
 import org.l2jmobius.gameserver.mechanics.events.EventType;
@@ -64,7 +66,8 @@ public class RequestBypassToServer extends ClientPacket
 		"_diary",
 		"OlympiadArenaChange",
 		"manor_menu_select",
-		"report"
+		"report",
+		"voice"
 	};
 	
 	// S
@@ -128,6 +131,23 @@ public class RequestBypassToServer extends ClientPacket
 			if (_command.startsWith("admin_"))
 			{
 				AdminCommandHandler.getInstance().onCommand(player, _command, true);
+			}
+			else if (_command.startsWith("voice ") || _command.startsWith("voice_") || _command.startsWith("voice."))
+			{
+				String voicedCmd = _command.substring(_command.indexOf(' ') + 1).trim();
+				if (voicedCmd.startsWith("."))
+				{
+					voicedCmd = voicedCmd.substring(1);
+				}
+				final StringTokenizer st = new StringTokenizer(voicedCmd, " ");
+				final String cmd = st.hasMoreTokens() ? st.nextToken() : "";
+				final String params = voicedCmd.length() > cmd.length() ? voicedCmd.substring(cmd.length()).trim() : "";
+				
+				final IVoicedCommandHandler handler = VoicedCommandHandler.getInstance().getHandler(cmd);
+				if (handler != null)
+				{
+					handler.onCommand(cmd, player, params);
+				}
 			}
 			else if (CommunityBoardHandler.getInstance().isCommunityBoardCommand(_command))
 			{

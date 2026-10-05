@@ -772,41 +772,44 @@ public class Antharas extends Script
 		}
 		else if (npcId == ANTHARAS_NPC_ID)
 		{
-			_lastAttackTime = System.currentTimeMillis();
-			
-			if (!ANTHARAS_NEST_ZONE.isCharacterInZone(attacker) || (getStatus() != STATUS_IN_FIGHT))
+			if (npc == _antharasBoss)
 			{
-				LOGGER.warning(getClass().getSimpleName() + ": Player " + attacker.getName() + " attacked Antharas in invalid conditions!");
-				attacker.teleToLocation(80464, 152294, -3534);
+				_lastAttackTime = System.currentTimeMillis();
+				
+				if (!ANTHARAS_NEST_ZONE.isCharacterInZone(attacker) || (getStatus() != STATUS_IN_FIGHT))
+				{
+					LOGGER.warning(getClass().getSimpleName() + ": Player " + attacker.getName() + " attacked Antharas in invalid conditions!");
+					attacker.teleToLocation(80464, 152294, -3534);
+				}
+				
+				if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTHARAS_ANTI_STRIDER.getSkillId()) && npc.checkDoCastConditions(ANTHARAS_ANTI_STRIDER.getSkill()))
+				{
+					addSkillCastDesire(npc, attacker, ANTHARAS_ANTI_STRIDER.getSkill(), 100);
+				}
+				
+				if (skill == null)
+				{
+					refreshAiParams(attacker, damage * 1000);
+				}
+				else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.25))
+				{
+					refreshAiParams(attacker, (damage / 3) * 100);
+				}
+				else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.5))
+				{
+					refreshAiParams(attacker, damage * 20);
+				}
+				else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.75))
+				{
+					refreshAiParams(attacker, damage * 10);
+				}
+				else
+				{
+					refreshAiParams(attacker, (damage / 3) * 20);
+				}
+				
+				manageSkills(npc);
 			}
-			
-			if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTHARAS_ANTI_STRIDER.getSkillId()) && npc.checkDoCastConditions(ANTHARAS_ANTI_STRIDER.getSkill()))
-			{
-				addSkillCastDesire(npc, attacker, ANTHARAS_ANTI_STRIDER.getSkill(), 100);
-			}
-			
-			if (skill == null)
-			{
-				refreshAiParams(attacker, damage * 1000);
-			}
-			else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.25))
-			{
-				refreshAiParams(attacker, (damage / 3) * 100);
-			}
-			else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.5))
-			{
-				refreshAiParams(attacker, damage * 20);
-			}
-			else if (npc.getCurrentHp() < (npc.getMaxHp() * 0.75))
-			{
-				refreshAiParams(attacker, damage * 10);
-			}
-			else
-			{
-				refreshAiParams(attacker, (damage / 3) * 20);
-			}
-			
-			manageSkills(npc);
 		}
 	}
 	
@@ -819,33 +822,36 @@ public class Antharas extends Script
 		final int npcId = npc.getId();
 		if (npcId == ANTHARAS_NPC_ID)
 		{
-			if ((killer == null) || !ANTHARAS_NEST_ZONE.isCharacterInZone(killer))
+			if (npc == _antharasBoss)
 			{
-				LOGGER.warning(getClass().getSimpleName() + ": Antharas was killed by " + ((killer != null) ? killer.getName() : "unknown") + " outside of nest zone. Forcing death handling.");
+				if ((killer == null) || !ANTHARAS_NEST_ZONE.isCharacterInZone(killer))
+				{
+					LOGGER.warning(getClass().getSimpleName() + ": Antharas was killed by " + ((killer != null) ? killer.getName() : "unknown") + " outside of nest zone. Forcing death handling.");
+				}
+				
+				_antharasBoss = null;
+				notifyEvent(EVENT_DESPAWN_MINIONS, null, null);
+				ANTHARAS_NEST_ZONE.broadcastPacket(new SpecialCamera(npc, 1200, 20, -10, 0, 10000, 13000, 0, 0, 0, 0, 0));
+				ANTHARAS_NEST_ZONE.broadcastPacket(new PlaySound("BS01_D"));
+				addSpawn(ANTHARAS_TELEPORT_CUBE_ID, 177615, 114941, -7709, 0, false, TELEPORT_CUBE_DURATION);
+				
+				final long baseIntervalMillis = GrandBossConfig.ANTHARAS_SPAWN_INTERVAL * 3600000L;
+				final long randomRangeMillis = GrandBossConfig.ANTHARAS_SPAWN_RANDOM * 3600000L;
+				final long respawnDelay = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
+				
+				setRespawn(respawnDelay);
+				startQuestTimer(EVENT_CLEAR_STATUS, respawnDelay, null, null);
+				cancelQuestTimer(EVENT_SET_REGEN, npc, null);
+				cancelQuestTimer(EVENT_CHECK_ATTACK, npc, null);
+				cancelQuestTimer(EVENT_SPAWN_MINION, npc, null);
+				startQuestTimer(EVENT_CLEAR_ZONE, TELEPORT_CUBE_DURATION, null, null);
+				setStatus(STATUS_DEAD);
+				
+				final long nextRespawnTime = System.currentTimeMillis() + respawnDelay;
+				LOGGER.info("Antharas will respawn at: " + TimeUtil.getDateTimeString(nextRespawnTime));
+				
+				resetFightState();
 			}
-			
-			_antharasBoss = null;
-			notifyEvent(EVENT_DESPAWN_MINIONS, null, null);
-			ANTHARAS_NEST_ZONE.broadcastPacket(new SpecialCamera(npc, 1200, 20, -10, 0, 10000, 13000, 0, 0, 0, 0, 0));
-			ANTHARAS_NEST_ZONE.broadcastPacket(new PlaySound("BS01_D"));
-			addSpawn(ANTHARAS_TELEPORT_CUBE_ID, 177615, 114941, -7709, 0, false, TELEPORT_CUBE_DURATION);
-			
-			final long baseIntervalMillis = GrandBossConfig.ANTHARAS_SPAWN_INTERVAL * 3600000L;
-			final long randomRangeMillis = GrandBossConfig.ANTHARAS_SPAWN_RANDOM * 3600000L;
-			final long respawnDelay = baseIntervalMillis + getRandom(-randomRangeMillis, randomRangeMillis);
-			
-			setRespawn(respawnDelay);
-			startQuestTimer(EVENT_CLEAR_STATUS, respawnDelay, null, null);
-			cancelQuestTimer(EVENT_SET_REGEN, npc, null);
-			cancelQuestTimer(EVENT_CHECK_ATTACK, npc, null);
-			cancelQuestTimer(EVENT_SPAWN_MINION, npc, null);
-			startQuestTimer(EVENT_CLEAR_ZONE, TELEPORT_CUBE_DURATION, null, null);
-			setStatus(STATUS_DEAD);
-			
-			final long nextRespawnTime = System.currentTimeMillis() + respawnDelay;
-			LOGGER.info("Antharas will respawn at: " + TimeUtil.getDateTimeString(nextRespawnTime));
-			
-			resetFightState();
 		}
 		else if ((npcId == ANTHARAS_BEHEMOTH_ID) && (killer != null) && ANTHARAS_NEST_ZONE.isCharacterInZone(killer))
 		{

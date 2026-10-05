@@ -262,18 +262,49 @@ public class SmartBotController implements Runnable
 		final double dist = _bot.calculateDistance2D(target);
 		if (dist > 1500)
 		{
-			// Teleport near target if too far
-			_bot.teleToLocation(target.getX() + 30, target.getY() + 30, target.getZ());
+			// Teleport near target if too far, with per-bot spread
+			final int[] offset = getBotSpreadOffset(target, 60);
+			_bot.teleToLocation(target.getX() + offset[0], target.getY() + offset[1], target.getZ());
 			return;
 		}
 		
-		if (dist > SmartBotConfig.BOT_FOLLOW_DISTANCE)
+		// Use a wider follow distance (minimum 150) so bots don't stack on top of owner
+		final int followDist = Math.max(SmartBotConfig.BOT_FOLLOW_DISTANCE, 150);
+		if (dist > followDist)
 		{
 			if (_bot.getAI().getIntention() != Intention.FOLLOW)
 			{
 				_bot.getAI().setIntentionFollow(target);
 			}
 		}
+	}
+	
+	/**
+	 * Calculates a unique X/Y offset for this bot relative to its owner so multiple bots
+	 * spread out in a circle rather than stacking on the same point.
+	 * @param owner the target player (owner)
+	 * @param radius distance from the owner center
+	 * @return int[2] with {offsetX, offsetY}
+	 */
+	private int[] getBotSpreadOffset(Player owner, int radius)
+	{
+		final java.util.List<Player> siblings = SmartBotManager.getInstance().getBotsByOwner(owner);
+		int index = 0;
+		for (int i = 0; i < siblings.size(); i++)
+		{
+			if (siblings.get(i).getObjectId() == _bot.getObjectId())
+			{
+				index = i;
+				break;
+			}
+		}
+		final int total = Math.max(siblings.size(), 1);
+		final double angle = (2 * Math.PI * index) / total;
+		return new int[]
+		{
+			(int) (Math.cos(angle) * radius),
+			(int) (Math.sin(angle) * radius)
+		};
 	}
 	
 	private void handleCombat(Monster mob)

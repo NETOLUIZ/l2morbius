@@ -1299,4 +1299,7 @@
 		<npc id="21637" count="2" respawnDelay="180" /> <!-- Crimson Vale Master -->
 		<npc id="20986" count="1" respawnDelay="320" respawnRandom="90" /> <!-- Sairon -->
 	</spawn>
+	<spawn name="Antharas_DevilsIsle">
+		<npc id="29019" x="55312" y="219168" z="-3223" heading="0" respawnDelay="72000" respawnRandom="14400" /> <!-- Antharas -->
+	</spawn>
 </list>

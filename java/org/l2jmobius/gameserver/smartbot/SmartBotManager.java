@@ -33,6 +33,7 @@ import org.l2jmobius.gameserver.ai.Intention;
 import org.l2jmobius.gameserver.config.custom.SmartBotConfig;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.data.xml.PlayerTemplateData;
+import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.entity.World;
 import org.l2jmobius.gameserver.entity.actor.Player;
 import org.l2jmobius.gameserver.entity.actor.appearance.PlayerAppearance;
@@ -180,8 +181,12 @@ public class SmartBotManager
 			bot.addAutoSoulShot(1463); // Soulshot: D-grade
 		}
 		
-		final int spawnX = owner.getX() + Rnd.get(30, 60);
-		final int spawnY = owner.getY() + Rnd.get(30, 60);
+		// Spread bots in a circle around the owner so they don't stack
+		final int botIndex = getBotsByOwner(owner).size();
+		final double angle = (2 * Math.PI * botIndex) / Math.max(SmartBotConfig.MAX_BOTS_PER_PLAYER, 1);
+		final int spreadRadius = 60 + (botIndex * 20);
+		final int spawnX = owner.getX() + (int) (Math.cos(angle) * spreadRadius);
+		final int spawnY = owner.getY() + (int) (Math.sin(angle) * spreadRadius);
 		final int spawnZ = owner.getZ();
 		
 		final SmartBotData data = new SmartBotData(
@@ -293,6 +298,13 @@ public class SmartBotManager
 		bot.setRunning();
 		bot.spawnMe(data.getSpawnX(), data.getSpawnY(), data.getSpawnZ());
 		bot.setHeading(data.getHeading());
+		
+		// Apply Wind Walk buff (skill 1204) to boost bot run speed
+		final org.l2jmobius.gameserver.mechanics.skill.Skill windWalk = SkillData.getInstance().getSkill(1204, 2);
+		if (windWalk != null)
+		{
+			windWalk.applyEffects(bot, bot);
+		}
 		
 		final SmartBotController controller = new SmartBotController(bot, data);
 		_controllers.put(bot.getObjectId(), controller);
@@ -467,7 +479,21 @@ public class SmartBotManager
 		final Player bot = _spawnedBots.get(botObjectId);
 		if (bot != null && owner != null)
 		{
-			bot.teleToLocation(owner.getX() + 30, owner.getY() + 30, owner.getZ());
+			// Spread recalled bots around the owner to avoid stacking
+			final List<Player> siblings = getBotsByOwner(owner);
+			int index = 0;
+			for (int i = 0; i < siblings.size(); i++)
+			{
+				if (siblings.get(i).getObjectId() == botObjectId)
+				{
+					index = i;
+					break;
+				}
+			}
+			final int total = Math.max(siblings.size(), 1);
+			final double angle = (2 * Math.PI * index) / total;
+			final int radius = 60;
+			bot.teleToLocation(owner.getX() + (int) (Math.cos(angle) * radius), owner.getY() + (int) (Math.sin(angle) * radius), owner.getZ());
 			setFollowTarget(bot.getObjectId(), owner.getObjectId());
 		}
 	}

@@ -299,43 +299,45 @@ public class SmartBotNpc extends Script implements IVoicedCommandHandler
 		final String bypassPrefix = (npc != null) ? "bypass -h Script SmartBotNpc " : "bypass -h voice .bot ";
 		
 		final StringBuilder sb = new StringBuilder();
-		sb.append("<html><title>SmartBot Manager</title><body><center>");
-		sb.append("<table width=270><tr><td align=center><font color=\"LEVEL\">SmartBot Companion Master</font></td></tr></table>");
+		sb.append("<html><title>SmartBot Manager</title><body>");
+		sb.append("<center>");
 		sb.append("<br>");
-		sb.append("<font color=\"AAAAAA\">Bots Ativos: </font><font color=\"00FF00\">").append(botCount).append("</font> / ").append(maxBots).append("<br>");
+		sb.append("<font color=\"LEVEL\">SmartBot Companion Master</font><br>");
+		sb.append("<img src=\"L2UI.SquareGray\" width=250 height=1><br>");
+		sb.append("Bots Ativos: <font color=\"00FF00\">").append(botCount).append("</font> / ").append(maxBots).append("<br>");
 		
 		if (SmartBotConfig.BOT_DONATION_COIN_COUNT > 0)
 		{
-			sb.append("<font color=\"FF9900\">Custo por Bot: ").append(SmartBotConfig.BOT_DONATION_COIN_COUNT).append(" Moeda(s)</font><br>");
+			sb.append("<font color=\"FF9900\">Custo: ").append(SmartBotConfig.BOT_DONATION_COIN_COUNT).append(" Moeda(s)</font><br>");
 		}
 		else
 		{
-			sb.append("<font color=\"66FF66\">[Modo de Teste Local - Gratuito]</font><br>");
+			sb.append("<font color=\"66FF66\">[Teste - Gratis]</font><br>");
 		}
 		sb.append("<br>");
 		
 		// If player can create more bots
 		if (botCount < maxBots)
 		{
-			sb.append("<table width=260 bgcolor=222222>");
-			sb.append("<tr><td align=center colspan=2><font color=\"LEVEL\">-- Criar Novo Bot (Lv 20 Set D) --</font></td></tr>");
+			sb.append("<font color=\"LEVEL\">Criar Bot (Lv 20 Set D)</font><br>");
+			sb.append("<table width=250>");
 			sb.append("<tr>");
-			sb.append("<td align=center><button value=\"Archer\" action=\"").append(bypassPrefix).append("create ARCHER\" width=110 height=22 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
-			sb.append("<td align=center><button value=\"Mage\" action=\"").append(bypassPrefix).append("create MAGE\" width=110 height=22 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("<td align=center><button value=\"Archer\" action=\"").append(bypassPrefix).append("create ARCHER\" width=110 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("<td align=center><button value=\"Mage\" action=\"").append(bypassPrefix).append("create MAGE\" width=110 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
 			sb.append("</tr><tr>");
-			sb.append("<td align=center><button value=\"Healer\" action=\"").append(bypassPrefix).append("create HEALER\" width=110 height=22 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
-			sb.append("<td align=center><button value=\"Buffer\" action=\"").append(bypassPrefix).append("create BUFFER\" width=110 height=22 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("<td align=center><button value=\"Healer\" action=\"").append(bypassPrefix).append("create HEALER\" width=110 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("<td align=center><button value=\"Buffer\" action=\"").append(bypassPrefix).append("create BUFFER\" width=110 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
 			sb.append("</tr><tr>");
-			sb.append("<td align=center><button value=\"Dagger\" action=\"").append(bypassPrefix).append("create DAGGER\" width=110 height=22 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
-			sb.append("<td align=center><button value=\"Tank\" action=\"").append(bypassPrefix).append("create TANK\" width=110 height=22 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("<td align=center><button value=\"Dagger\" action=\"").append(bypassPrefix).append("create DAGGER\" width=110 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("<td align=center><button value=\"Tank\" action=\"").append(bypassPrefix).append("create TANK\" width=110 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
 			sb.append("</tr></table><br>");
 		}
 		
 		// List of existing bots
 		if (!ownedBots.isEmpty())
 		{
-			sb.append("<table width=260 bgcolor=111111>");
-			sb.append("<tr><td align=center colspan=3><font color=\"LEVEL\">-- Seus Bots Atuais --</font></td></tr>");
+			sb.append("<font color=\"LEVEL\">Seus Bots</font><br>");
+			sb.append("<img src=\"L2UI.SquareGray\" width=250 height=1><br>");
 			
 			for (Player bot : ownedBots)
 			{
@@ -343,29 +345,31 @@ public class SmartBotNpc extends Script implements IVoicedCommandHandler
 				final String preset = (data != null) ? data.getPresetName() : "BOT";
 				final int bId = bot.getObjectId();
 				
-				sb.append("<tr><td colspan=3><font color=\"FFFFFF\"><b>").append(bot.getName()).append("</b> (").append(preset).append(" - Lv ").append(bot.getLevel()).append(")</font></td></tr>");
+				sb.append("<font color=\"FFFFFF\">").append(bot.getName()).append("</font> <font color=\"AAAAAA\">(").append(preset).append(" Lv").append(bot.getLevel()).append(")</font><br>");
+				sb.append("<table width=250>");
 				sb.append("<tr>");
-				sb.append("<td><button value=\"Seguir\" action=\"").append(bypassPrefix).append("follow ").append(bId).append("\" width=75 height=20 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
-				sb.append("<td><button value=\"Assist\" action=\"").append(bypassPrefix).append("assist ").append(bId).append("\" width=75 height=20 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
-				sb.append("<td><button value=\"Buff\" action=\"").append(bypassPrefix).append("buff ").append(bId).append("\" width=75 height=20 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
+				sb.append("<td align=center><button value=\"Seguir\" action=\"").append(bypassPrefix).append("follow ").append(bId).append("\" width=75 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+				sb.append("<td align=center><button value=\"Assist\" action=\"").append(bypassPrefix).append("assist ").append(bId).append("\" width=75 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+				sb.append("<td align=center><button value=\"Buff\" action=\"").append(bypassPrefix).append("buff ").append(bId).append("\" width=75 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
 				sb.append("</tr><tr>");
-				sb.append("<td><button value=\"Puxar\" action=\"").append(bypassPrefix).append("recall ").append(bId).append("\" width=75 height=20 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
-				sb.append("<td><button value=\"Guardar\" action=\"").append(bypassPrefix).append("despawn ").append(bId).append("\" width=75 height=20 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
-				sb.append("<td><button value=\"Deletar\" action=\"").append(bypassPrefix).append("delete ").append(bId).append("\" width=75 height=20 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
-				sb.append("</tr><tr><td colspan=3><font color=\"444444\">----------------------------------</font></td></tr>");
+				sb.append("<td align=center><button value=\"Puxar\" action=\"").append(bypassPrefix).append("recall ").append(bId).append("\" width=75 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+				sb.append("<td align=center><button value=\"Guardar\" action=\"").append(bypassPrefix).append("despawn ").append(bId).append("\" width=75 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+				sb.append("<td align=center><button value=\"Deletar\" action=\"").append(bypassPrefix).append("delete ").append(bId).append("\" width=75 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+				sb.append("</tr></table>");
+				sb.append("<img src=\"L2UI.SquareGray\" width=250 height=1><br>");
 			}
-			sb.append("</table><br>");
 			
 			// Group controls
-			sb.append("<table width=260><tr>");
-			sb.append("<td align=center><button value=\"Todos Seguir\" action=\"").append(bypassPrefix).append("all_follow\" width=85 height=21 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
-			sb.append("<td align=center><button value=\"Todos Assist\" action=\"").append(bypassPrefix).append("all_assist\" width=85 height=21 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
-			sb.append("<td align=center><button value=\"Todos Puxar\" action=\"").append(bypassPrefix).append("all_recall\" width=85 height=21 back=\"L2UI_ch3.smallbutton2_over\" fore=\"L2UI_ch3.smallbutton2\"></td>");
-			sb.append("</tr><tr>");
-			sb.append("<td align=center colspan=3><button value=\"Copiar Meus Buffs para os Bots\" action=\"").append(bypassPrefix).append("copy_buffs\" width=220 height=22 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
-			sb.append("</tr><tr>");
-			sb.append("<td align=center colspan=3><button value=\"Curar Todos os Bots (HP/MP)\" action=\"").append(bypassPrefix).append("heal_bots\" width=220 height=22 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
-			sb.append("</tr></table>");
+			sb.append("<br>");
+			sb.append("<table width=250>");
+			sb.append("<tr>");
+			sb.append("<td align=center><button value=\"Todos Seguir\" action=\"").append(bypassPrefix).append("all_follow\" width=75 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("<td align=center><button value=\"Todos Assist\" action=\"").append(bypassPrefix).append("all_assist\" width=75 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("<td align=center><button value=\"Todos Puxar\" action=\"").append(bypassPrefix).append("all_recall\" width=75 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td>");
+			sb.append("</tr>");
+			sb.append("<tr><td colspan=3 align=center><button value=\"Copiar Meus Buffs para os Bots\" action=\"").append(bypassPrefix).append("copy_buffs\" width=230 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td></tr>");
+			sb.append("<tr><td colspan=3 align=center><button value=\"Curar Todos os Bots (HP/MP)\" action=\"").append(bypassPrefix).append("heal_bots\" width=230 height=21 back=\"L2UI_ch3.Btn1_normalOn\" fore=\"L2UI_ch3.Btn1_normal\"></td></tr>");
+			sb.append("</table>");
 		}
 		
 		sb.append("</center></body></html>");
