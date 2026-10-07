@@ -169,12 +169,12 @@
 		<affectRange>1100</affectRange>
 		<coolTime>2000</coolTime>
 		<effectPoint>-100</effectPoint>
-		<element>0</element> <!-- Fire -->
-		<elementPower>180</elementPower>
-		<hitTime>6000</hitTime> <!-- Epilogue Modification -->
+		<element>3</element> <!-- Earth -->
+		<elementPower>20</elementPower>
+		<hitTime>6000</hitTime>
 		<isDebuff>true</isDebuff>
-		<magicLevel>85</magicLevel>
-		<power>28600</power>
+		<magicLevel>79</magicLevel>
+		<power>3500</power>
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="PhysicalDamage" />
@@ -193,15 +193,15 @@
 		<affectRange>1500</affectRange>
 		<coolTime>3000</coolTime>
 		<effectPoint>-100</effectPoint>
-		<element>0</element> <!-- Fire -->
-		<elementPower>180</elementPower>
+		<element>3</element> <!-- Earth -->
+		<elementPower>20</elementPower>
 		<fanRange>0,180,1500,400</fanRange>
 		<flyRadius>600</flyRadius>
 		<flyType>THROW_UP</flyType>
-		<hitTime>3000</hitTime> <!-- Epilogue Modification -->
+		<hitTime>3000</hitTime>
 		<isDebuff>true</isDebuff>
-		<magicLevel>85</magicLevel>
-		<power>28600</power>
+		<magicLevel>79</magicLevel>
+		<power>3500</power>
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="PhysicalDamage" />
@@ -224,12 +224,12 @@
 		<coolTime>2700</coolTime>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
-		<element>0</element> <!-- Fire -->
-		<elementPower>180</elementPower>
-		<hitTime>2300</hitTime> <!-- Epilogue Modification -->
+		<element>3</element> <!-- Earth -->
+		<elementPower>20</elementPower>
+		<hitTime>2300</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLevel>85</magicLevel>
+		<magicLevel>79</magicLevel>
 		<trait>DERANGEMENT</trait>
 		<effects>
 			<effect name="Fear" />
@@ -252,7 +252,7 @@
 		<hitTime>2800</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLevel>85</magicLevel>
+		<magicLevel>79</magicLevel>
 		<trait>DERANGEMENT</trait>
 		<effects>
 			<effect name="Debuff">
@@ -279,11 +279,11 @@
 		<coolTime>2700</coolTime>
 		<effectPoint>-100</effectPoint>
 		<effectRange>#effectRange</effectRange>
-		<element>0</element> <!-- Fire -->
-		<elementPower>180</elementPower>
+		<element>3</element> <!-- Earth -->
+		<elementPower>20</elementPower>
 		<fanRange>0,0,1200,300</fanRange>
-		<hitTime>2300</hitTime> <!-- Epilogue Modification -->
-		<magicLevel>85</magicLevel>
+		<hitTime>2300</hitTime>
+		<magicLevel>79</magicLevel>
 		<power>650</power>
 		<effects>
 			<effect name="MagicalDamage" />
@@ -307,10 +307,10 @@
 		<effectRange>1500</effectRange>
 		<element>3</element> <!-- Earth -->
 		<elementPower>20</elementPower>
-		<hitTime>2300</hitTime> <!-- Epilogue Modification -->
+		<hitTime>2300</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLevel>85</magicLevel>
+		<magicLevel>79</magicLevel>
 		<power>10</power>
 		<effects>
 			<effect name="PhysicalDamage" />
@@ -327,11 +327,11 @@
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
-		<element>0</element> <!-- Fire -->
-		<elementPower>180</elementPower>
+		<element>3</element> <!-- Earth -->
+		<elementPower>20</elementPower>
 		<hitTime>2200</hitTime>
-		<magicLevel>85</magicLevel>
-		<power>57200</power>
+		<magicLevel>79</magicLevel>
+		<power>5000</power>
 		<effects>
 			<effect name="PhysicalDamage" />
 		</effects>
@@ -344,11 +344,11 @@
 		<coolTime>800</coolTime>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
-		<element>0</element> <!-- Fire -->
-		<elementPower>180</elementPower>
+		<element>3</element> <!-- Earth -->
+		<elementPower>20</elementPower>
 		<hitTime>2200</hitTime>
-		<magicLevel>85</magicLevel>
-		<power>57200</power>
+		<magicLevel>79</magicLevel>
+		<power>5000</power>
 		<effects>
 			<effect name="PhysicalDamage" />
 		</effects>

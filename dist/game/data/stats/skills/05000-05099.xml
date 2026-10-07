@@ -1453,7 +1453,7 @@
 		<hitTime>4000</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>1</lvlBonusRate>
-		<magicLevel>85</magicLevel>
+		<magicLevel>79</magicLevel>
 		<trait>DERANGEMENT</trait>
 		<effects>
 			<effect name="Fear" />
@@ -1467,10 +1467,10 @@
 		<effectPoint>-1</effectPoint>
 		<effectRange>1100</effectRange>
 		<element>3</element> <!-- Earth -->
-		<elementPower>180</elementPower>
+		<elementPower>20</elementPower>
 		<hitTime>8000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
-		<magicLevel>85</magicLevel>
+		<magicLevel>79</magicLevel>
 		<power>1084</power>
 		<reuseDelay>6000</reuseDelay>
 		<effects>
@@ -1483,10 +1483,10 @@
 		<affectRange>250</affectRange>
 		<effectPoint>-100</effectPoint>
 		<element>0</element> <!-- Fire -->
-		<elementPower>180</elementPower>
+		<elementPower>20</elementPower>
 		<hitTime>100</hitTime>
 		<isSuicideAttack>true</isSuicideAttack>
-		<magicLevel>85</magicLevel>
+		<magicLevel>79</magicLevel>
 		<power>473</power>
 		<effects>
 			<effect name="MagicalDamage" />
@@ -1499,9 +1499,9 @@
 		<effectPoint>-100</effectPoint>
 		<effectRange>200</effectRange>
 		<hitTime>1500</hitTime>
-		<magicLevel>85</magicLevel>
+		<magicLevel>79</magicLevel>
 		<mpConsume>83</mpConsume>
-		<power>30215</power>
+		<power>2500</power>
 		<effects>
 			<effect name="PhysicalDamage" />
 		</effects>
@@ -1513,9 +1513,9 @@
 		<effectPoint>-100</effectPoint>
 		<effectRange>1100</effectRange>
 		<hitTime>3000</hitTime>
-		<magicLevel>85</magicLevel>
+		<magicLevel>79</magicLevel>
 		<mpConsume>83</mpConsume>
-		<power>88254</power>
+		<power>3000</power>
 		<effects>
 			<effect name="PhysicalDamage" />
 		</effects>
@@ -1529,7 +1529,7 @@
 		<elementPower>20</elementPower>
 		<hitTime>100</hitTime>
 		<isSuicideAttack>true</isSuicideAttack>
-		<magicLevel>85</magicLevel>
+		<magicLevel>79</magicLevel>
 		<power>473</power>
 		<effects>
 			<effect name="MagicalDamage" />
