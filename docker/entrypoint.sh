@@ -46,6 +46,7 @@ update_database_config() {
     local config_file="$1"
     if [ -f "$config_file" ]; then
         echo "[*] Ajustando configurações em ${config_file}..."
+        dos2unix "$config_file" 2>/dev/null || true
         sed -i "s|^URL = .*|URL = jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?useUnicode=true\&characterEncoding=utf-8\&allowPublicKeyRetrieval=true\&useSSL=false\&connectTimeout=10000\&interactiveClient=true\&sessionVariables=wait_timeout=600,interactive_timeout=600\&autoReconnect=true|g" "$config_file"
         sed -i "s|^Login = .*|Login = ${DB_USER}|g" "$config_file"
         sed -i "s|^Password = .*|Password = ${DB_PASSWORD}|g" "$config_file"
@@ -60,6 +61,7 @@ if [ "$SERVER_TYPE" = "login" ]; then
 
     # Garante binding em todas as interfaces para permitir conexão do GameServer
     if [ -f "config/Server.ini" ]; then
+        dos2unix "config/Server.ini" 2>/dev/null || true
         sed -i "s|^LoginserverHostname = .*|LoginserverHostname = 0.0.0.0|g" "config/Server.ini"
         sed -i "s|^LoginHostname = .*|LoginHostname = 0.0.0.0|g" "config/Server.ini"
         sed -i "s|^AutoCreateAccounts = .*|AutoCreateAccounts = True|g" "config/Server.ini"
@@ -86,6 +88,7 @@ elif [ "$SERVER_TYPE" = "game" ]; then
     LOGIN_HOST=${LOGIN_HOST:-loginserver}
     LOGIN_PORT=${LOGIN_PORT:-9014}
     if [ -f "config/Server.ini" ]; then
+        dos2unix "config/Server.ini" 2>/dev/null || true
         sed -i "s|^LoginHost = .*|LoginHost = ${LOGIN_HOST}|g" "config/Server.ini"
         sed -i "s|^LoginPort = .*|LoginPort = ${LOGIN_PORT}|g" "config/Server.ini"
         sed -i "s|^GameserverHostname = .*|GameserverHostname = 0.0.0.0|g" "config/Server.ini"

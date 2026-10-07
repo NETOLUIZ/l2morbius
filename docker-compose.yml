@@ -34,7 +34,7 @@ services:
     ports:
       - "2106:2106"
     volumes:
-      - l2_app_data:/app
+      - l2_login_data:/app
     depends_on:
       mariadb:
         condition: service_healthy
@@ -74,7 +74,7 @@ services:
     ports:
       - "7777:7777"
     volumes:
-      - l2_app_data:/app
+      - l2_game_data:/app
     depends_on:
       mariadb:
         condition: service_healthy
@@ -87,17 +87,19 @@ services:
       - -c
       - |
         apt-get update -qq && apt-get install -y -qq git netcat-traditional dos2unix mariadb-client > /dev/null
-        while [ ! -d "/app/dist" ]; do
-          sleep 2
-        done
-        cd /app && git fetch origin && git reset --hard origin/main || true
+        if [ ! -d "/app/dist" ]; then
+          git clone --depth 1 https://github.com/NETOLUIZ/l2morbius.git /app
+        else
+          cd /app && git fetch origin && git reset --hard origin/main
+        fi
         dos2unix /app/docker/entrypoint.sh
         chmod +x /app/docker/entrypoint.sh
         exec /app/docker/entrypoint.sh
 
 volumes:
   l2_db_data:
-  l2_app_data:
+  l2_login_data:
+  l2_game_data:
 
 networks:
   l2-network:
