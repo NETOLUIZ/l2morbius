@@ -5,23 +5,26 @@
 		<npc id="50008" x="10430" y="-24520" z="-3645" heading="0" respawnDelay="60" /> <!-- Buffer Thiago at Wharf -->
 	</spawn>
 
-	<spawn name="Primeval_FerociousBuffalo_Beach">
-		<territory minZ="-3750" maxZ="-3500">
-			<node x="10600" y="-24200" />
-			<node x="12500" y="-24200" />
-			<node x="12500" y="-22500" />
-			<node x="10600" y="-22500" />
-		</territory>
-		<npc id="900200" count="12" respawnDelay="20" respawnRandom="5" />
-	</spawn>
+	<spawn name="Primeval_FerociousBuffalo">
+		<!-- Primeval Isle Beach Farm Spot 1 -->
+		<npc id="900200" x="10850" y="-24100" z="-3645" heading="15000" respawnDelay="20" />
+		<npc id="900200" x="11100" y="-23950" z="-3645" heading="25000" respawnDelay="20" />
+		<npc id="900200" x="11350" y="-23800" z="-3645" heading="35000" respawnDelay="20" />
+		<npc id="900200" x="11600" y="-23650" z="-3645" heading="45000" respawnDelay="20" />
+		<npc id="900200" x="11850" y="-23500" z="-3645" heading="55000" respawnDelay="20" />
 
-	<spawn name="Primeval_FerociousBuffalo_Plains">
-		<territory minZ="-3700" maxZ="-3400">
-			<node x="12500" y="-22500" />
-			<node x="14500" y="-22500" />
-			<node x="14500" y="-20000" />
-			<node x="12500" y="-20000" />
-		</territory>
-		<npc id="900200" count="18" respawnDelay="20" respawnRandom="5" />
+		<!-- Primeval Isle Beach Farm Spot 2 -->
+		<npc id="900200" x="12100" y="-23300" z="-3645" heading="10000" respawnDelay="20" />
+		<npc id="900200" x="12350" y="-23100" z="-3645" heading="20000" respawnDelay="20" />
+		<npc id="900200" x="12600" y="-22900" z="-3645" heading="30000" respawnDelay="20" />
+		<npc id="900200" x="12850" y="-22700" z="-3645" heading="40000" respawnDelay="20" />
+		<npc id="900200" x="13100" y="-22500" z="-3645" heading="50000" respawnDelay="20" />
+
+		<!-- Primeval Isle Beach Farm Spot 3 -->
+		<npc id="900200" x="11500" y="-24200" z="-3645" heading="12000" respawnDelay="20" />
+		<npc id="900200" x="11750" y="-24000" z="-3645" heading="22000" respawnDelay="20" />
+		<npc id="900200" x="12000" y="-23800" z="-3645" heading="32000" respawnDelay="20" />
+		<npc id="900200" x="12250" y="-23600" z="-3645" heading="42000" respawnDelay="20" />
+		<npc id="900200" x="12500" y="-23400" z="-3645" heading="52000" respawnDelay="20" />
 	</spawn>
 </list>
