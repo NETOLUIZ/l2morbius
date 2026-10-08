@@ -18,7 +18,7 @@
 			<skill id="4416" level="3" /> <!-- Beasts -->
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
-		<ai type="AGGRESSIVE" aggroRange="1000" clanHelpRange="500" isAggressive="true">
+		<ai type="FIGHTER" aggroRange="1000" clanHelpRange="500" isAggressive="true">
 			<clanList><clan>FEROCIOUS_BUFFALO</clan></clanList>
 		</ai>
 		<collision><radius normal="28" /><height normal="55" /></collision>

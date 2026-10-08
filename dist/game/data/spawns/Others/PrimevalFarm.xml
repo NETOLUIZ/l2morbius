@@ -4,4 +4,24 @@
 	<spawn name="PrimevalWharf_Buffer">
 		<npc id="50008" x="10430" y="-24520" z="-3645" heading="0" respawnDelay="60" /> <!-- Buffer Thiago at Wharf -->
 	</spawn>
+
+	<spawn name="Primeval_FerociousBuffalo_Beach">
+		<territory minZ="-3750" maxZ="-3500">
+			<node x="10600" y="-24200" />
+			<node x="12500" y="-24200" />
+			<node x="12500" y="-22500" />
+			<node x="10600" y="-22500" />
+		</territory>
+		<npc id="900200" count="12" respawnDelay="20" respawnRandom="5" />
+	</spawn>
+
+	<spawn name="Primeval_FerociousBuffalo_Plains">
+		<territory minZ="-3700" maxZ="-3400">
+			<node x="12500" y="-22500" />
+			<node x="14500" y="-22500" />
+			<node x="14500" y="-20000" />
+			<node x="12500" y="-20000" />
+		</territory>
+		<npc id="900200" count="18" respawnDelay="20" respawnRandom="5" />
+	</spawn>
 </list>
