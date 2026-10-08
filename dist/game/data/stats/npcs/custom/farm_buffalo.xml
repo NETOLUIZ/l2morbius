@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/npcs.xsd">
+	<!-- Level 78 aggressive farm mob. Uses the existing Grazing Buffalo appearance. -->
+	<npc id="900200" displayId="21330" level="78" type="Monster" name="Ferocious Buffalo" usingServerSideName="true" title="Farm Monster" usingServerSideTitle="true">
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<acquire exp="45000" sp="5200" />
+		<stats str="45" int="21" dex="32" wit="20" con="48" men="20">
+			<vitals hp="12000" hpRegen="18" mp="2200" mpRegen="5" />
+			<attack physical="1550" magical="700" random="30" critical="4" accuracy="6" attackSpeed="280" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="850" magical="520" evasion="2" />
+			<speed><walk ground="80" /><run ground="190" /></speed>
+			<hitTime>460</hitTime>
+		</stats>
+		<status undying="false" attackable="true" />
+		<skillList>
+			<skill id="4073" level="8" /> <!-- Shock -->
+			<skill id="4416" level="3" /> <!-- Beasts -->
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="AGGRESSIVE" aggroRange="1000" clanHelpRange="500" isAggressive="true">
+			<clanList><clan>FEROCIOUS_BUFFALO</clan></clanList>
+		</ai>
+		<collision><radius normal="28" /><height normal="55" /></collision>
+		<dropLists>
+			<drop>
+				<group chance="100">
+					<item id="4037" min="1" max="1" chance="100" /> <!-- Coin of Luck -->
+				</group>
+			</drop>
+		</dropLists>
+	</npc>
+</list>

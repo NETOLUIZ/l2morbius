@@ -48,7 +48,7 @@ services:
         if [ ! -d "/app/dist" ]; then
           git clone --depth 1 https://github.com/NETOLUIZ/l2morbius.git /app
         else
-          cd /app && git fetch origin && git reset --hard origin/main
+          cd /app && git fetch origin && git merge --ff-only origin/main || echo "[!] Atualização automática ignorada; dados locais preservados."
         fi
         dos2unix /app/docker/entrypoint.sh
         chmod +x /app/docker/entrypoint.sh
@@ -90,7 +90,7 @@ services:
         if [ ! -d "/app/dist" ]; then
           git clone --depth 1 https://github.com/NETOLUIZ/l2morbius.git /app
         else
-          cd /app && git fetch origin && git reset --hard origin/main
+          cd /app && git fetch origin && git merge --ff-only origin/main || echo "[!] Atualização automática ignorada; dados locais preservados."
         fi
         dos2unix /app/docker/entrypoint.sh
         chmod +x /app/docker/entrypoint.sh

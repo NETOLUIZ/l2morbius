@@ -35,22 +35,10 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<group chance="100">
-					<item id="6658" min="1" max="1" chance="100" /> <!-- Ring of Baium -->
-				</group>
-				<group chance="100">
-					<item id="57" min="5000000" max="10000000" chance="100" /> <!-- Adena -->
-				</group>
-				<group chance="80">
-					<item id="6364" min="1" max="1" chance="20" /> <!-- Forgotten Blade -->
-					<item id="6579" min="1" max="1" chance="20" /> <!-- Arcana Mace -->
-					<item id="7575" min="1" max="1" chance="20" /> <!-- Draconic Bow -->
-					<item id="6367" min="1" max="1" chance="20" /> <!-- Angel Slayer -->
-					<item id="6372" min="1" max="1" chance="20" /> <!-- Heaven's Divider -->
-				</group>
-				<group chance="80">
-					<item id="8762" min="1" max="3" chance="100" /> <!-- Top-Grade Life Stone: level 76 -->
-				</group>
+				<group chance="60"><item id="80" min="1" max="1" chance="10"/><item id="6369" min="1" max="1" chance="1.5"/><item id="6367" min="1" max="1" chance="1.5"/><item id="6365" min="1" max="1" chance="2"/><item id="6364" min="1" max="1" chance="2"/><item id="6370" min="1" max="1" chance="1.5"/><item id="288" min="1" max="1" chance="10"/><item id="6580" min="1" max="1" chance="1.5"/><item id="150" min="1" max="1" chance="10"/><item id="98" min="1" max="1" chance="10"/><item id="6579" min="1" max="1" chance="2"/><item id="7575" min="1" max="1" chance="2"/><item id="6371" min="1" max="1" chance="2"/><item id="6372" min="1" max="1" chance="2"/><item id="6366" min="1" max="1" chance="2"/><item id="212" min="1" max="1" chance="10"/><item id="235" min="1" max="1" chance="10"/><item id="269" min="1" max="1" chance="10"/><item id="2504" min="1" max="1" chance="10"/></group>
+				<group chance="100"><item id="6658" min="1" max="1" chance="100"/></group>
+				<group chance="86.4516"><item id="8620" min="5" max="15" chance="92.5373"/><item id="8762" min="1" max="1" chance="1.86567"/><item id="8761" min="1" max="1" chance="5.597"/></group>
+				<group chance="75.5"><item id="8751" min="1" max="2" chance="52.9801"/><item id="8752" min="1" max="2" chance="47.0199"/></group>
 			</drop>
 		</dropLists>
 	</npc>
@@ -101,6 +89,12 @@
 				<group chance="80">
 					<item id="8762" min="1" max="5" chance="100" /> <!-- Top-Grade Life Stone: level 76 -->
 				</group>
+				<!-- Official Valakas armor and jewelry groups. -->
+				<group chance="100"><item id="6674" min="1" max="1" chance="15"/><item id="6680" min="1" max="1" chance="35"/><item id="6684" min="1" max="1" chance="35"/></group>
+				<group chance="100"><item id="6675" min="1" max="1" chance="15"/><item id="6682" min="1" max="1" chance="33"/><item id="6686" min="1" max="1" chance="33"/></group>
+				<group chance="100"><item id="6676" min="1" max="1" chance="34"/><item id="6681" min="1" max="1" chance="33"/><item id="6685" min="1" max="1" chance="33"/></group>
+				<group chance="100"><item id="6679" min="1" max="1" chance="34"/><item id="6683" min="1" max="1" chance="33"/><item id="6687" min="1" max="1" chance="33"/></group>
+				<group chance="100"><item id="6657" min="1" max="1" chance="100"/></group>
 			</drop>
 		</dropLists>
 	</npc>
