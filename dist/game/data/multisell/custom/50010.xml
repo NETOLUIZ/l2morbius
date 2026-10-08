@@ -2,16 +2,21 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
 	<!-- Mirellas - Top Donation items. Currency: Coin of Luck (4037). -->
 	<npcs><npc>50010</npc></npcs>
-	<item><ingredient id="4037" count="100"/><production id="10000" count="1"/></item>
-	<item><ingredient id="4037" count="250"/><production id="10001" count="1"/></item>
-	<item><ingredient id="4037" count="100"/><production id="10002" count="1"/></item>
-	<item><ingredient id="4037" count="100"/><production id="10003" count="1"/></item>
-	<item><ingredient id="4037" count="250"/><production id="10004" count="1"/></item>
-	<item><ingredient id="4037" count="100"/><production id="10005" count="1"/></item>
-	<item><ingredient id="4037" count="100"/><production id="10006" count="1"/></item>
-	<item><ingredient id="4037" count="250"/><production id="10007" count="1"/></item>
-	<item><ingredient id="4037" count="100"/><production id="10008" count="1"/></item>
-	<item><ingredient id="4037" count="100"/><production id="10009" count="1"/></item>
-	<item><ingredient id="4037" count="250"/><production id="10020" count="1"/></item>
-	<item><ingredient id="4037" count="250"/><production id="10021" count="1"/></item>
+	<!-- Apella Helm -->
+	<item><ingredient id="4037" count="100"/><production id="7860" count="1"/></item>
+	<!-- Apella Heavy Set -->
+	<item><ingredient id="4037" count="250"/><production id="7861" count="1"/></item>
+	<item><ingredient id="4037" count="100"/><production id="7862" count="1"/></item>
+	<item><ingredient id="4037" count="100"/><production id="7863" count="1"/></item>
+	<!-- Apella Light Set -->
+	<item><ingredient id="4037" count="250"/><production id="7864" count="1"/></item>
+	<item><ingredient id="4037" count="100"/><production id="7865" count="1"/></item>
+	<item><ingredient id="4037" count="100"/><production id="7866" count="1"/></item>
+	<!-- Apella Robe Set -->
+	<item><ingredient id="4037" count="250"/><production id="7867" count="1"/></item>
+	<item><ingredient id="4037" count="100"/><production id="7868" count="1"/></item>
+	<item><ingredient id="4037" count="100"/><production id="7869" count="1"/></item>
+	<!-- Tattoos (Underwear slot) -->
+	<item><ingredient id="4037" count="250"/><production id="493" count="1"/></item>
+	<item><ingredient id="4037" count="250"/><production id="485" count="1"/></item>
 </list>

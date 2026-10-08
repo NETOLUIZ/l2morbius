@@ -1234,9 +1234,6 @@
 		<set name="weight" val="570" />
 		<set name="price" val="1736800" />
 		<set name="enchant_enabled" val="true" />
-		<conditions msgId="1518">
-			<player pledgeClass="5" /> <!-- Baron -->
-		</conditions>
 		<stats>
 			<stat type="pDef">69</stat>
 		</stats>
@@ -1254,12 +1251,6 @@
 		<set name="weight" val="9780" />
 		<set name="price" val="7524400" />
 		<set name="enchant_enabled" val="true" />
-		<conditions msgId="1518">
-			<and>
-				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="5" /> <!-- Baron -->
-			</and>
-		</conditions>
 		<stats>
 			<stat type="pDef">278</stat>
 		</stats>
@@ -1276,12 +1267,6 @@
 		<set name="weight" val="580" />
 		<set name="price" val="1157000" />
 		<set name="enchant_enabled" val="true" />
-		<conditions msgId="1518">
-			<and>
-				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="5" /> <!-- Baron -->
-			</and>
-		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1298,12 +1283,6 @@
 		<set name="weight" val="1130" />
 		<set name="price" val="1157000" />
 		<set name="enchant_enabled" val="true" />
-		<conditions msgId="1518">
-			<and>
-				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="5" /> <!-- Baron -->
-			</and>
-		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1321,9 +1300,6 @@
 		<set name="weight" val="5400" />
 		<set name="price" val="5643300" />
 		<set name="enchant_enabled" val="true" />
-		<conditions msgId="1518">
-			<player pledgeClass="5" /> <!-- Baron -->
-		</conditions>
 		<stats>
 			<stat type="pDef">209</stat>
 		</stats>
@@ -1340,9 +1316,6 @@
 		<set name="weight" val="580" />
 		<set name="price" val="1157000" />
 		<set name="enchant_enabled" val="true" />
-		<conditions msgId="1518">
-			<player pledgeClass="5" /> <!-- Baron -->
-		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1359,9 +1332,6 @@
 		<set name="weight" val="1130" />
 		<set name="price" val="1157000" />
 		<set name="enchant_enabled" val="true" />
-		<conditions msgId="1518">
-			<player pledgeClass="5" /> <!-- Baron -->
-		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1379,12 +1349,6 @@
 		<set name="weight" val="2450" />
 		<set name="price" val="5643300" />
 		<set name="enchant_enabled" val="true" />
-		<conditions msgId="1518">
-			<and>
-				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="5" /> <!-- Baron -->
-			</and>
-		</conditions>
 		<stats>
 			<stat type="pDef">139</stat>
 			<stat type="maxMp">665</stat>
@@ -1402,12 +1366,6 @@
 		<set name="weight" val="580" />
 		<set name="price" val="1157000" />
 		<set name="enchant_enabled" val="true" />
-		<conditions msgId="1518">
-			<and>
-				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="5" /> <!-- Baron -->
-			</and>
-		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -1424,12 +1382,6 @@
 		<set name="weight" val="1130" />
 		<set name="price" val="1157000" />
 		<set name="enchant_enabled" val="true" />
-		<conditions msgId="1518">
-			<and>
-				<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-				<player pledgeClass="5" /> <!-- Baron -->
-			</and>
-		</conditions>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>

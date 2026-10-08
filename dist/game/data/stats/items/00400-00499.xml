@@ -1593,6 +1593,9 @@
 		<stats>
 			<stat type="pDef">53</stat>
 		</stats>
+		<skills>
+			<skill id="10021" level="1" />
+		</skills>
 	</item>
 	<item id="486" type="Armor" name="Tattoo of Fire">
 		<set name="icon" val="icon.weapon_voodoo_doll_i00" />
@@ -1721,6 +1724,9 @@
 		<stats>
 			<stat type="pDef">117</stat>
 		</stats>
+		<skills>
+			<skill id="10020" level="1" />
+		</skills>
 	</item>
 	<item id="494" type="Armor" name="Tattoo of Doom">
 		<set name="icon" val="icon.weapon_voodoo_doll_i00" />

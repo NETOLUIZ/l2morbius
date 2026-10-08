@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/armorSets.xsd">
-	<set id="100"><chest id="10001"/><head id="10000"/><gloves id="10002"/><feet id="10003"/><skill id="3006" level="1"/><skill id="10001" level="1"/></set>
-	<set id="101"><chest id="10004"/><head id="10000"/><gloves id="10005"/><feet id="10006"/><skill id="3006" level="1"/><skill id="10002" level="1"/></set>
-	<set id="102"><chest id="10007"/><head id="10000"/><gloves id="10008"/><feet id="10009"/><skill id="3006" level="1"/><skill id="10003" level="1"/></set>
-</list>

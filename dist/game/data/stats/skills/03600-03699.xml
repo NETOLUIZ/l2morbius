@@ -188,6 +188,12 @@
 				<add stat="maxCp">232</add>
 				<mul stat="regCp">1.4</mul>
 				<mul stat="reduceExpLostByPvp">0.9</mul>
+				<mul stat="pDef">1.13</mul>
+				<add stat="maxHp">650</add>
+			</effect>
+			<effect name="DefenceTrait">
+				<SLEEP>75</SLEEP>
+				<HOLD>75</HOLD>
 			</effect>
 			<effect name="TriggerSkillByDamageReceived">
 				<attackerType>Playable</attackerType>
@@ -212,6 +218,9 @@
 				<add stat="maxCp">195</add>
 				<mul stat="regCp">1.4</mul>
 				<mul stat="reduceExpLostByPvp">0.9</mul>
+				<mul stat="pAtk">1.09</mul>
+				<mul stat="pAtkSpd">1.09</mul>
+				<add stat="maxMp">350</add>
 			</effect>
 			<effect name="TriggerSkillByDamageReceived">
 				<attackerType>Playable</attackerType>
@@ -236,6 +245,12 @@
 				<add stat="maxCp">177</add>
 				<mul stat="regCp">1.4</mul>
 				<mul stat="reduceExpLostByPvp">0.9</mul>
+				<mul stat="mAtk">1.22</mul>
+				<add stat="runSpd">12</add>
+				<sub stat="cancel">55</sub>
+			</effect>
+			<effect name="DefenceTrait">
+				<SHOCK>55</SHOCK>
 			</effect>
 			<effect name="TriggerSkillByDamageReceived">
 				<attackerType>Playable</attackerType>
