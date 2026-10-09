@@ -1,17 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<spawn name="StartingBuffers">
-		<!-- Talking Island - Human Fighter Starting Area -->
+		<!-- ==================================================== -->
+		<!-- LOCAIS EXATOS ONDE OS PERSONAGENS NOVOS NASCEM (LV 1) -->
+		<!-- ==================================================== -->
+		<!-- Talking Island - Templo Inicial Human Fighter -->
 		<npc id="50008" x="-71480" y="258380" z="-3104" heading="42000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
-		<!-- Talking Island - Human Mystic Starting Area -->
+
+		<!-- Talking Island - Templo Inicial Human Mystic -->
 		<npc id="50008" x="-91080" y="248080" z="-3560" heading="6000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
-		<!-- Elven Village - Elven Starting Area -->
-		<npc id="50008" x="46160" y="41200" z="-3504" heading="17000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
-		<!-- Dark Elf Village - Dark Elf Starting Area -->
-		<npc id="50008" x="28384" y="11120" z="-4232" heading="32000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
-		<!-- Orc Village - Orc Starting Area -->
-		<npc id="50008" x="-56736" y="-113600" z="-672" heading="0" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
-		<!-- Dwarven Village - Dwarven Starting Area -->
-		<npc id="50008" x="108535" y="-173950" z="-408" heading="38000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Elven Village - Santuário Inicial Elf (Fighter & Mystic) -->
+		<npc id="50008" x="46160" y="41200" z="-3440" heading="17000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Dark Elf Village - Templo Inicial Dark Elf (Fighter & Mystic) -->
+		<npc id="50008" x="28384" y="11120" z="-4224" heading="32000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Orc Village - Platô Inicial Orc (Fighter & Mystic) -->
+		<npc id="50008" x="-56736" y="-113600" z="-680" heading="0" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Dwarven Village - Mina Inicial Dwarf (Fighter) -->
+		<npc id="50008" x="108535" y="-173950" z="-400" heading="38000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- ==================================================== -->
+		<!-- CENTROS DAS CIDADES / VILAS INICIAIS                 -->
+		<!-- ==================================================== -->
+		<!-- Talking Island Village (Praça Central da Vila) -->
+		<npc id="50008" x="-84350" y="243170" z="-3730" heading="25000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Elven Village (Praça Central da Vila dos Elfos) -->
+		<npc id="50008" x="45448" y="48359" z="-3059" heading="32767" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Dark Elven Village (Praça Central da Vila dos Dark Elfos) -->
+		<npc id="50008" x="12111" y="16686" z="-4585" heading="32767" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Orc Village (Praça Central da Vila dos Orcs) -->
+		<npc id="50008" x="-44836" y="-113589" z="-208" heading="32767" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Dwarven Village (Praça Central da Vila dos Anões) -->
+		<npc id="50008" x="115184" y="-178187" z="-901" heading="32767" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Gludin Village (Praça Central de Gludin) -->
+		<npc id="50008" x="-81450" y="150300" z="-3120" heading="16000" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Gludio Castle Town (Praça Central de Gludio) -->
+		<npc id="50008" x="-14220" y="123565" z="-3118" heading="32767" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
+
+		<!-- Dion Castle Town (Praça Central de Dion) -->
+		<npc id="50008" x="18748" y="145437" z="-3125" heading="32767" respawnDelay="60" /> <!-- Thiago - Scheme Buffer -->
 	</spawn>
 </list>
