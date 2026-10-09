@@ -454,3 +454,91 @@ footer p { margin: 0 0 12px; }
     transition-duration: .01ms !important;
   }
 }
+
+/* Doações Pix */
+.donation-notice {
+  background: rgba(217, 169, 40, 0.08);
+  border: 1px solid rgba(217, 169, 40, 0.35);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #f7fafc;
+}
+.donation-notice strong {
+  color: var(--primary);
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+}
+.amount-presets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.amount-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-align: center;
+}
+.amount-btn:hover, .amount-btn.active {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(217, 169, 40, 0.12);
+}
+.pix-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+.pix-qr-img {
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 4px solid #ffffff;
+  margin: 16px auto;
+  display: block;
+  background: #ffffff;
+}
+.pix-code-wrap {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.pix-code-input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  color: var(--fg);
+  font-family: monospace;
+  font-size: 13px;
+  min-height: 40px;
+}
+.badge-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-pending { background: rgba(236, 201, 75, 0.2); color: #ecc94b; border: 1px solid rgba(236, 201, 75, 0.4); }
+.badge-approved { background: rgba(72, 187, 120, 0.2); color: #48bb78; border: 1px solid rgba(72, 187, 120, 0.4); }
+.badge-rejected, .badge-cancelled { background: rgba(245, 101, 101, 0.2); color: #f56565; border: 1px solid rgba(245, 101, 101, 0.4); }
+
