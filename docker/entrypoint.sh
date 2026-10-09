@@ -9,7 +9,7 @@ DB_NAME=${DB_NAME:-l2jmobiusinterlude}
 EXTERNAL_IP=${EXTERNAL_IP:-2.24.108.110}
 
 echo "=========================================================="
-echo " Starting L2J Mobius Server: ${SERVER_TYPE^^}"
+echo " Starting L2 Korentech Server: ${SERVER_TYPE^^}"
 echo "=========================================================="
 
 # 1. Aguarda o banco de dados estar pronto
@@ -24,7 +24,7 @@ echo "[+] Conexão com o banco de dados estabelecida com sucesso!"
 if command -v mariadb &> /dev/null; then
     TABLE_COUNT=$(mariadb -h "${DB_HOST}" -P "${DB_PORT}" -u "${DB_USER}" -p"${DB_PASSWORD}" "${DB_NAME}" -sse "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='${DB_NAME}';" 2>/dev/null || echo "0")
     if [ "$TABLE_COUNT" = "0" ] || [ -z "$TABLE_COUNT" ]; then
-        echo "[*] Banco de dados vazio. Instalando tabelas do Mobius automaticamente..."
+        echo "[*] Banco de dados vazio. Instalando tabelas do L2 Korentech automaticamente..."
         if [ -d "/app/dist/db_installer/sql/login" ]; then
             for f in /app/dist/db_installer/sql/login/*.sql; do
                 [ -f "$f" ] && mariadb -h "${DB_HOST}" -P "${DB_PORT}" -u "${DB_USER}" -p"${DB_PASSWORD}" "${DB_NAME}" < "$f" 2>/dev/null || true

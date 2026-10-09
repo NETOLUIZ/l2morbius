@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS `announcements` (
 ) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO announcements (`type`, `author`, `content`) VALUES 
-(0, 'L2jMobius', 'Thanks for using L2jMobius!'),
-(0, 'L2jMobius', 'http://www.l2jmobius.org');
+(0, 'L2 Korentech', 'Bem-vindo ao L2 Korentech!'),
+(0, 'L2 Korentech', 'http://2.24.108.110:8090');
