@@ -121,7 +121,7 @@ EOF
 
     mkdir -p log
 
-    JAVA_OPT="-server -Dfile.encoding=UTF-8 -Djava.util.logging.manager=org.l2jmobius.log.ServerLogManager -Dorg.slf4j.simpleLogger.log.com.zaxxer.hikari=warn -XX:+UseZGC -Xms${JAVA_XMS:-2g} -Xmx${JAVA_XMX:-4g}"
+    JAVA_OPT="-server -Dfile.encoding=UTF-8 -Djava.util.logging.manager=org.l2jmobius.log.ServerLogManager -Dorg.slf4j.simpleLogger.log.com.zaxxer.hikari=warn -Duser.timezone=${TZ:-America/Sao_Paulo} -XX:+UseZGC -Xms${JAVA_XMS:-2g} -Xmx${JAVA_XMX:-4g}"
     echo "[+] Iniciando GameServer com JVM options: ${JAVA_OPT}"
     exec java ${JAVA_OPT} -jar ../libs/GameServer.jar
 

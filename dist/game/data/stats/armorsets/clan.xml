@@ -35,6 +35,7 @@
 		<feet id="7863" /> <!-- Apella Solleret - Heavy -->
 		<skill id="3006" level="1" /> <!-- Equip Set Items -->
 		<skill id="3608" level="1" /> <!-- Apella Heavy Armor Set -->
+		<skill id="10030" level="1" /> <!-- Top Donation Apella Heavy Set -->
 		<enchant6skill id="3620" level="1" /> <!-- Enchant Heavy Armor (A Grade) -->
 	</set>
 	<set id="63">
@@ -44,6 +45,7 @@
 		<feet id="7866" /> <!-- Apella Boots - Light -->
 		<skill id="3006" level="1" /> <!-- Equip Set Items -->
 		<skill id="3609" level="1" /> <!-- Apella Light Armor Set -->
+		<skill id="10031" level="1" /> <!-- Top Donation Apella Light Set -->
 		<enchant6skill id="3621" level="1" /> <!-- Enchant Light Armor (A Grade) -->
 	</set>
 	<set id="64">
@@ -53,6 +55,7 @@
 		<feet id="7869" /> <!-- Apella Sandals - Robe -->
 		<skill id="3006" level="1" /> <!-- Equip Set Items -->
 		<skill id="3610" level="1" /> <!-- Apella Robe Set -->
+		<skill id="10032" level="1" /> <!-- Top Donation Apella Robe Set -->
 		<enchant6skill id="3622" level="1" /> <!-- Enchant Robe (A Grade) -->
 	</set>
 </list>
