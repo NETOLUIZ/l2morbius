@@ -4,6 +4,8 @@
 	<exclude file="package-info.java" />
 	<exclude file="handlers" />
 	<exclude file="Zaken" />
+	<!-- Arena Bosses (Baium, Valakas, Zaken) desativados: as Arenas 1, 2 e 3 ficam sem boss. Para reativar, apague a linha abaixo. -->
+	<exclude file="ArenaBossEvent" />
 	
 	<!--
 	With this file you can exclude/include specific folders/files from within the scripts directory.
