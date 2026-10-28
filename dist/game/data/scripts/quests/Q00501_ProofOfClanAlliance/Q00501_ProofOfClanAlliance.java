@@ -29,14 +29,18 @@ import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.entity.actor.Npc;
 import org.l2jmobius.gameserver.entity.actor.Player;
 import org.l2jmobius.gameserver.entity.clan.Clan;
+import org.l2jmobius.gameserver.entity.item.enums.ItemProcessType;
+import org.l2jmobius.gameserver.entity.item.instance.Item;
 import org.l2jmobius.gameserver.mechanics.script.Quest;
 import org.l2jmobius.gameserver.mechanics.script.QuestSound;
 import org.l2jmobius.gameserver.mechanics.script.QuestState;
 import org.l2jmobius.gameserver.mechanics.script.State;
 import org.l2jmobius.gameserver.mechanics.skill.AbnormalType;
 import org.l2jmobius.gameserver.mechanics.skill.Skill;
+import org.l2jmobius.gameserver.network.SystemMessageId;
 import org.l2jmobius.gameserver.network.enums.ChatType;
 import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
+import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author Rootware, Skache
@@ -184,7 +188,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 					st.setState(State.STARTED);
 					st.set("symbol", "1");
 					st2.set("symbols", String.valueOf(st2.getInt("symbols") + 1));
-					giveItems(player, SYMBOL_OF_LOYALTY, 1);
+					giveSymbolOfLoyalty(player, npc);
 					playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
 					htmltext = "30757-04.htm";
 				}
@@ -248,7 +252,7 @@ public class Q00501_ProofOfClanAlliance extends Quest
 				st.setState(State.STARTED);
 				st.set("symbol", "1");
 				st2.set("symbols", String.valueOf(st2.getInt("symbols") + 1));
-				giveItems(player, SYMBOL_OF_LOYALTY, 1);
+				giveSymbolOfLoyalty(player, npc);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
 				return null;
 			}
@@ -554,6 +558,23 @@ public class Q00501_ProofOfClanAlliance extends Quest
 	private static boolean hasAbnormal(Player player)
 	{
 		return player.getEffectList().getBuffInfoByAbnormalType(AbnormalType.FATAL_POISON) != null;
+	}
+
+	/**
+	 * Gives exactly 1 Symbol of Loyalty, ignoring QuestItemDropAmountMultiplier (Rates.ini).<br>
+	 * The quest depends on an exact count of symbols, so this item must never be multiplied.
+	 * @param player the player who receives the symbol
+	 * @param npc the NPC that gave the symbol
+	 */
+	private static void giveSymbolOfLoyalty(Player player, Npc npc)
+	{
+		final Item item = player.getInventory().addItem(ItemProcessType.QUEST, SYMBOL_OF_LOYALTY, 1, player, npc);
+		if (item != null)
+		{
+			final SystemMessage smsg = new SystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1);
+			smsg.addItemName(item);
+			player.sendPacket(smsg);
+		}
 	}
 	
 	public void castSkill(Npc npc, Player player, int skillId)
