@@ -1582,7 +1582,7 @@
 		</stats>
 	</item>
 	<item id="485" type="Armor" name="Tattoo of Power">
-		<set name="icon" val="icon.weapon_voodoo_doll_i00" />
+		<set name="icon" val="icon.weapon_angel_slayer_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="underwear" />
@@ -1710,7 +1710,7 @@
 		</stats>
 	</item>
 	<item id="493" type="Armor" name="Tattoo of Avadon">
-		<set name="icon" val="icon.weapon_voodoo_doll_i00" />
+		<set name="icon" val="icon.weapon_imperial_staff_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="LIGHT" />
 		<set name="bodypart" val="underwear" />
