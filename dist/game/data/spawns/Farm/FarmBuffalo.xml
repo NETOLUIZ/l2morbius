@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<!-- Farm zone: 45 Ferocious Buffalo (900200) around -22000 122985 -3589. Area of 2000x2000 units. -->
+	<spawn zone="farm_buffalo_01">
+		<territory minZ="-3900" maxZ="-3300">
+			<node x="-23000" y="121985" />
+			<node x="-21000" y="121985" />
+			<node x="-21000" y="123985" />
+			<node x="-23000" y="123985" />
+		</territory>
+		<npc id="900200" count="45" respawnDelay="20" /> <!-- Ferocious Buffalo -->
+	</spawn>
+</list>
