@@ -20,4 +20,35 @@
 			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
+	<item id="60000" type="Weapon" name="Dark Elven Long Bow - Evasion (clone)">
+		<!-- <Soul Crystal Enhancement>. Increases Evasion by 2. -->
+		<set name="icon" val="icon.weapon_dark_elven_long_bow_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BOW" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;10;0" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="1157" />
+		<set name="crystal_type" val="B" />
+		<set name="material" val="ORIHARUKON" />
+		<set name="weight" val="1720" />
+		<set name="price" val="8680000" />
+		<set name="soulshots" val="3" />
+		<set name="spiritshots" val="1" />
+		<set name="mp_consume" val="8" />
+		<set name="enchant_enabled" val="true" />
+		<set name="reuse_delay" val="820" />
+		<stats>
+			<stat type="pAtk">397</stat>
+			<stat type="mAtk">350</stat>
+			<stat type="critRate">15</stat>
+			<stat type="accCombat">-3.75</stat>
+			<stat type="pAtkSpd">300</stat>
+			<stat type="randomDamage">5</stat>
+			<stat type="pAtkRange">500</stat>
+		</stats>
+		<skills>
+			<skill id="3009" level="5" /> <!-- Special Ability: Evasion -->
+		</skills>
+	</item>
 </list>
