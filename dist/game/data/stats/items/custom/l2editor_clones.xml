@@ -40,15 +40,16 @@
 		<set name="reuse_delay" val="820" />
 		<stats>
 			<stat type="pAtk">397</stat>
-			<stat type="mAtk">350</stat>
+			<stat type="mAtk">550</stat>
 			<stat type="critRate">15</stat>
-			<stat type="accCombat">-3.75</stat>
+			<stat type="accCombat">3.75</stat>
 			<stat type="pAtkSpd">300</stat>
 			<stat type="randomDamage">5</stat>
 			<stat type="pAtkRange">500</stat>
 		</stats>
 		<skills>
 			<skill id="3009" level="5" /> <!-- Special Ability: Evasion -->
+			<skill id="10040" level="1" /> <!-- +30% cast speed, +40% M.Def, +30% P.Def -->
 		</skills>
 	</item>
 </list>
