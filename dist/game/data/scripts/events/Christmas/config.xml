@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <event name="Christmas" active="01 10 2026-05 01 2027" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/eventConfig.xsd">
-	<droplist>
-		<!-- Sem drops de moeda do evento (Star/Bead Ornament, Fir Tree Branch, Flower Pot, Echo Crystals). O Papai Noel e as arvores continuam ativos. -->
-	</droplist>
+	<!-- Sem drops de moeda do evento (Star/Bead Ornament, Fir Tree Branch, Flower Pot, Echo Crystals): bloco <droplist> removido. O Papai Noel e as arvores continuam ativos. -->
 	<spawnlist>
 		<!-- Santa Spawns -->
 		<add npc="31863" x="147698" y="-56025" z="-2775" heading="48000" /> <!-- Goddard -->

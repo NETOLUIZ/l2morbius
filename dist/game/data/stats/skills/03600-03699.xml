@@ -195,16 +195,6 @@
 				<SLEEP>75</SLEEP>
 				<HOLD>75</HOLD>
 			</effect>
-			<effect name="TriggerSkillByDamageReceived">
-				<attackerType>Playable</attackerType>
-				<minAttackerLevel>1</minAttackerLevel>
-				<maxAttackerLevel>100</maxAttackerLevel>
-				<minDamage>1</minDamage>
-				<chance>20</chance>
-				<skillId>1201</skillId>
-				<skillLevel>33</skillLevel> <!-- Dryad Root -->
-				<targetType>ONE</targetType>
-			</effect>
 		</effects>
 	</skill>
 	<skill id="3609" levels="1" name="Apella Light Armor Set">
@@ -221,16 +211,6 @@
 				<mul stat="pAtk">1.09</mul>
 				<mul stat="pAtkSpd">1.09</mul>
 				<add stat="maxMp">350</add>
-			</effect>
-			<effect name="TriggerSkillByDamageReceived">
-				<attackerType>Playable</attackerType>
-				<minAttackerLevel>1</minAttackerLevel>
-				<maxAttackerLevel>100</maxAttackerLevel>
-				<minDamage>1</minDamage>
-				<chance>20</chance>
-				<skillId>1160</skillId>
-				<skillLevel>15</skillLevel> <!-- Slow -->
-				<targetType>ONE</targetType>
 			</effect>
 		</effects>
 	</skill>
@@ -251,16 +231,6 @@
 			</effect>
 			<effect name="DefenceTrait">
 				<SHOCK>55</SHOCK>
-			</effect>
-			<effect name="TriggerSkillByDamageReceived">
-				<attackerType>Playable</attackerType>
-				<minAttackerLevel>1</minAttackerLevel>
-				<maxAttackerLevel>100</maxAttackerLevel>
-				<minDamage>1</minDamage>
-				<chance>20</chance>
-				<skillId>1206</skillId>
-				<skillLevel>19</skillLevel> <!-- Wind Shackle -->
-				<targetType>ONE</targetType>
 			</effect>
 		</effects>
 	</skill>
