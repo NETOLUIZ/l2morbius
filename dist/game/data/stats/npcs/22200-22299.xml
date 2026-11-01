@@ -49,6 +49,9 @@
 				<item id="57" min="40000" max="80000" chance="100" /> <!-- Adena -->
 				<group chance="70">
 					<item id="57" min="6036" max="12300" chance="100" /> <!-- Adena -->
+					<item id="4037" min="1" max="1" chance="100" /> <!-- Coin of Luck -->
+					<item id="4037" min="1" max="1" chance="100" /> <!-- Coin of Luck -->
+					<item id="4037" min="1" max="1" chance="100" /> <!-- Coin of Luck -->
 				</group>
 				<group chance="0.3719">
 					<item id="5533" min="1" max="1" chance="20.0052" /> <!-- Elysian Head -->
@@ -428,6 +431,7 @@
 				<item id="57" min="40000" max="80000" chance="100" /> <!-- Adena -->
 				<group chance="70">
 					<item id="57" min="6613" max="13420" chance="100" /> <!-- Adena -->
+					<item id="4037" min="1" max="1" chance="100" /> <!-- Coin of Luck -->
 				</group>
 				<group chance="0.2932">
 					<item id="5537" min="1" max="1" chance="100.0" /> <!-- Soul Separator Head -->
@@ -1005,6 +1009,7 @@
 					<item id="8903" min="1" max="1" chance="7.113" /> <!-- Ancient Spellbook: Gehenna -->
 					<item id="8908" min="1" max="1" chance="7.113" /> <!-- Ancient Spellbook: Mass Recharge -->
 					<item id="8954" min="1" max="1" chance="7.1131" /> <!-- Blue Primeval Crystal -->
+					<item id="4037" min="1" max="15" chance="100" /> <!-- Coin of Luck -->
 				</group>
 			</drop>
 			<spoil>
@@ -1255,6 +1260,8 @@
 				<item id="6392" min="10" max="20" chance="100" /> <!-- Event - Medal -->
 				<item id="6393" min="5" max="10" chance="100" /> <!-- Event - Glittering Medal -->
 				<item id="57" min="40000" max="80000" chance="100" /> <!-- Adena -->
+				<item id="4037" min="3" max="3" chance="100" /> <!-- Coin of Luck (drop do ex-Ferocious Buffalo 900200) -->
+				<item id="57" min="500" max="125000" chance="100" /> <!-- Adena (ex-Ferocious Buffalo 900200) -->
 				<group chance="70">
 					<item id="57" min="5157" max="10520" chance="100" /> <!-- Adena -->
 				</group>

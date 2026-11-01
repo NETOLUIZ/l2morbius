@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+<list enabled="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
 	<!-- Farm zone: 45 Ferocious Buffalo (900200) around -22000 122985 -3589. Sem geodata o Z do spawn e sorteado entre minZ e maxZ, entao a faixa fica estreita (chao ~-3589) para os mobs nao flutuarem. -->
 	<spawn zone="farm_buffalo_01">
 		<territory minZ="-3640" maxZ="-3560">
