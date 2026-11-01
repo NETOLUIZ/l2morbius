@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="Antharas_GiranHarbor">
+		<npc id="29067" x="47803" y="186380" z="-3512" heading="27998" respawnDelay="3600" /> <!-- Antharas (normal), porto de Giran -->
+	</spawn>
+</list>
