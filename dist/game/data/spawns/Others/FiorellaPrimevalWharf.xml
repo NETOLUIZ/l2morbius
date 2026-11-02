@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="Fiorella_PrimevalWharf">
+		<npc id="50009" x="11789" y="-24203" z="-3669" heading="16770" respawnDelay="60" /> <!-- Fiorella - Global Gatekeeper (Primeval Isle Wharf) -->
+	</spawn>
+</list>
