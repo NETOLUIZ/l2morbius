@@ -1127,7 +1127,6 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4170" level="6" /> <!-- BOSS Mortal Blow -->
 			<skill id="4171" level="6" /> <!-- BOSS Spinning Slash -->
-			<skill id="4176" level="6" /> <!-- BOSS Reflect Damage -->
 			<skill id="4177" level="6" /> <!-- BOSS Cancel Magic -->
 			<skill id="4416" level="3" /> <!-- Beasts -->
 			<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -1984,7 +1983,6 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4210" level="7" /> <!-- BOSS Chant of Life -->
-			<skill id="4214" level="7" /> <!-- BOSS Reflect Damage -->
 			<skill id="4414" level="3" /> <!-- Light Armor Type -->
 			<skill id="4416" level="6" /> <!-- Humanoids -->
 		</skillList>
@@ -2908,7 +2906,6 @@
 		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4214" level="2" /> <!-- BOSS Reflect Damage -->
 			<skill id="4278" level="1" /> <!-- Dark Attack -->
 			<skill id="4333" level="5" /> <!-- Resist Dark Attack -->
 			<skill id="4416" level="9" /> <!-- Demons -->
@@ -3219,7 +3216,6 @@
 		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4214" level="4" /> <!-- BOSS Reflect Damage -->
 			<skill id="4416" level="6" /> <!-- Humanoids -->
 			<skill id="4781" level="4" /> <!-- BOSS Heal -->
 		</skillList>
@@ -4089,7 +4085,6 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4169" level="6" /> <!-- Shock -->
 			<skill id="4172" level="6" /> <!-- Shock -->
-			<skill id="4176" level="6" /> <!-- BOSS Reflect Damage -->
 			<skill id="4177" level="6" /> <!-- BOSS Cancel Magic -->
 			<skill id="4416" level="10" /> <!-- Dragons -->
 			<skill id="4494" level="1" /> <!-- Raid Boss -->

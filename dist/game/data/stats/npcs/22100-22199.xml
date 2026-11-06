@@ -6076,12 +6076,7 @@
 					<item id="5545" min="1" max="1" chance="3.11765" /> <!-- Dark Legion's Edge Blade -->
 					<item id="8627" min="1" max="1" chance="15.4294" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8633" min="1" max="1" chance="25.0724" /> <!-- Elixir of Mental Strength (S-Grade) -->
-					<item id="8877" min="1" max="1" chance="30.0873" /> <!-- Spellbook: Soul of the Phoenix -->
-					<item id="8892" min="1" max="1" chance="20.058" /> <!-- Ancient Tactical Manual: Symbol of Defense -->
 					<item id="8956" min="1" max="1" chance="3.11765" /> <!-- Red Primeval Crystal -->
-				</group>
-				<group chance="100">
-					<item id="8877" min="1" max="1" chance="0.7482" /> <!-- Spellbook: Soul of the Phoenix -->
 				</group>
 			</drop>
 		</dropLists>
@@ -6208,17 +6203,9 @@
 					<item id="5546" min="1" max="1" chance="7.11317" /> <!-- Sword of Miracles Edge -->
 					<item id="8955" min="1" max="1" chance="1.09933" /> <!-- Green Primeval Crystal -->
 					<item id="8954" min="1" max="1" chance="4.38905" /> <!-- Blue Primeval Crystal -->
-					<item id="8902" min="1" max="1" chance="26.2399" /> <!-- Ancient Spellbook: Day of Doom -->
-					<item id="8893" min="1" max="1" chance="34.7298" /> <!-- Ancient Tactical Manual: Symbol of Noise -->
 					<item id="8633" min="1" max="1" chance="9.9223" /> <!-- Elixir of Mental Strength (S-Grade) -->
 					<item id="8627" min="1" max="1" chance="8.81117" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8956" min="1" max="1" chance="3.29799" /> <!-- Red Primeval Crystal -->
-				</group>
-				<group chance="100">
-					<item id="8902" min="1" max="1" chance="0.5586" /> <!-- Ancient Spellbook: Day of Doom -->
-				</group>
-				<group chance="100">
-					<item id="8893" min="1" max="1" chance="0.5586" /> <!-- Ancient Tactical Manual: Symbol of Noise -->
 				</group>
 			</drop>
 		</dropLists>
@@ -6281,9 +6268,6 @@
 					<item id="6346" min="1" max="1" chance="47.9882" /> <!-- Sealed Majestic Ring Gemstone -->
 				</group>
 				<group chance="4.0043">
-					<item id="8904" min="1" max="1" chance="3.2062" /> <!-- Ancient Spellbook: Anti-Summoning Field -->
-					<item id="8899" min="1" max="1" chance="16.759" /> <!-- Ancient Spellbook: Volcano -->
-					<item id="8881" min="1" max="1" chance="8.3507" /> <!-- Spellbook: Cleanse -->
 					<item id="8633" min="1" max="1" chance="16.759" /> <!-- Elixir of Mental Strength (S-Grade) -->
 					<item id="8627" min="1" max="1" chance="41.6198" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8954" min="1" max="1" chance="8.3507" /> <!-- Blue Primeval Crystal -->

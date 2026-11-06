@@ -39,6 +39,4 @@
 	<item id="7001" count="1" restock_delay="60" /> <!-- Recipe: Greater Dye of WIT<Wit+3 Men-3> (100%) -->
 	<item id="8645" count="1" restock_delay="60" /> <!-- Recipe: Elixir of Life (S-Grade) (100%) -->
 	<item id="8651" count="1" restock_delay="60" /> <!-- Recipe: Elixir of Mental Strength (S-Grade) (100%) -->
-	<item id="8751" count="1" restock_delay="120" /> <!-- High-Grade Life Stone: level 70 -->
-	<item id="8762" count="1" restock_delay="720" /> <!-- Top-Grade Life Stone: level 76 -->
 </list>

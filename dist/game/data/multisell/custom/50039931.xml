@@ -20,14 +20,6 @@
 		<production id="6576" count="1" />
 	</item>
 	<item>
-		<ingredient id="57" count="56000000" />
-		<production id="957" count="1" />
-	</item>
-	<item>
-		<ingredient id="57" count="56000000" />
-		<production id="958" count="1" />
-	</item>
-	<item>
 		<ingredient id="57" count="110000" />
 		<production id="951" count="1" />
 	</item>
@@ -42,14 +34,6 @@
 	<item>
 		<ingredient id="57" count="350000" />
 		<production id="6574" count="1" />
-	</item>
-	<item>
-		<ingredient id="57" count="56000000" />
-		<production id="953" count="1" />
-	</item>
-	<item>
-		<ingredient id="57" count="56000000" />
-		<production id="954" count="1" />
 	</item>
 	<item>
 		<ingredient id="57" count="500000" />
@@ -68,14 +52,6 @@
 		<production id="6572" count="1" />
 	</item>
 	<item>
-		<ingredient id="57" count="56000000" />
-		<production id="949" count="1" />
-	</item>
-	<item>
-		<ingredient id="57" count="56000000" />
-		<production id="950" count="1" />
-	</item>
-	<item>
 		<ingredient id="57" count="1800000" />
 		<production id="729" count="1" />
 	</item>
@@ -90,14 +66,6 @@
 	<item>
 		<ingredient id="57" count="1800000" />
 		<production id="6570" count="1" />
-	</item>
-	<item>
-		<ingredient id="57" count="56000000" />
-		<production id="731" count="1" />
-	</item>
-	<item>
-		<ingredient id="57" count="56000000" />
-		<production id="732" count="1" />
 	</item>
 	<item>
 		<ingredient id="57" count="5000000" />
@@ -116,13 +84,5 @@
 		<ingredient id="6392" count="30" /> <!-- Event - Medal -->
 		<ingredient id="6393" count="15" /> <!-- Event - Glittering Medal -->
 		<production id="6578" count="1" /> <!-- Blessed Scroll: Enchant Armor (Grade S) -->
-	</item>
-	<item>
-		<ingredient id="57" count="56000000" />
-		<production id="961" count="1" />
-	</item>
-	<item>
-		<ingredient id="57" count="56000000" />
-		<production id="962" count="1" />
 	</item>
 </list>

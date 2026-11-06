@@ -33,11 +33,7 @@
 	<item id="6989" count="1" restock_delay="60" /> <!-- Recipe: Greater Dye of WIT<Wit+2 Men-2> (100%) -->
 	<item id="8644" count="1" restock_delay="120" /> <!-- Recipe: Elixir of Life (A-Grade) (100%) -->
 	<item id="8650" count="1" restock_delay="120" /> <!-- Recipe: Elixir of Mental Strength (A-Grade) (100%) -->
-	<item id="8751" count="1" restock_delay="120" /> <!-- High-Grade Life Stone: level 70 -->
-	<item id="8752" count="1" restock_delay="240" /> <!-- High-Grade Life Stone: level 76 -->
-	<item id="8761" count="1" restock_delay="360" /> <!-- Top-Grade Life Stone: level 70 -->
 	<item id="948" count="1" restock_delay="240" /> <!-- Scroll: Enchant Armor (Grade B) -->
 	<item id="947" count="1" restock_delay="360" /> <!-- Scroll: Enchant Weapon (Grade B) -->
 	<item id="730" count="1" restock_delay="360" /> <!-- Scroll: Enchant Armor (Grade A) -->
-	<item id="8762" count="1" restock_delay="720" /> <!-- Top-Grade Life Stone: level 76 -->
 </list>

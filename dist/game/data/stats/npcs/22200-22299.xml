@@ -188,8 +188,6 @@
 				</group>
 				<group chance="1.6843">
 					<item id="8954" min="1" max="1" chance="9.4044" /> <!-- Blue Primeval Crystal -->
-					<item id="8896" min="1" max="1" chance="4.6963" /> <!-- Ancient Tactical Manual: Symbol of Energy -->
-					<item id="8879" min="1" max="1" chance="3.5622" /> <!-- Spellbook: Summon Magnus the Unicorn -->
 					<item id="8633" min="1" max="1" chance="18.7851" /> <!-- Elixir of Mental Strength (S-Grade) -->
 					<item id="8627" min="1" max="1" chance="61.2068" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8955" min="1" max="1" chance="2.3452" /> <!-- Green Primeval Crystal -->
@@ -376,7 +374,6 @@
 				<group chance="1.0289">
 					<item id="8627" min="1" max="1" chance="76.2661" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8633" min="1" max="1" chance="10.9146" /> <!-- Elixir of Mental Strength (S-Grade) -->
-					<item id="8880" min="1" max="1" chance="7.367" /> <!-- Spellbook: Summon Spectral Knight -->
 					<item id="8954" min="1" max="1" chance="5.4523" /> <!-- Blue Primeval Crystal -->
 				</group>
 			</drop>
@@ -539,9 +536,6 @@
 					<item id="5537" min="1" max="1" chance="33.2918" /> <!-- Soul Separator Head -->
 					<item id="8954" min="1" max="1" chance="50.0623" /> <!-- Blue Primeval Crystal -->
 					<item id="8955" min="1" max="1" chance="16.6459" /> <!-- Green Primeval Crystal -->
-				</group>
-				<group chance="100">
-					<item id="8884" min="1" max="1" chance="2.1429" /> <!-- Spellbook: Spell Turning -->
 				</group>
 			</drop>
 		</dropLists>
@@ -846,8 +840,6 @@
 				<group chance="16.4284">
 					<item id="8627" min="1" max="1" chance="27.668" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8633" min="1" max="1" chance="35.8058" /> <!-- Elixir of Mental Strength (S-Grade) -->
-					<item id="8894" min="1" max="1" chance="9.0849" /> <!-- Ancient Tactical Manual: Symbol of Resistance -->
-					<item id="8895" min="1" max="1" chance="5.9676" /> <!-- Ancient Tactical Manual: Symbol of Honor -->
 					<item id="8956" min="1" max="1" chance="3.0282" /> <!-- Red Primeval Crystal -->
 					<item id="8762" min="1" max="1" chance="18.4455" /> <!-- Top-Grade Life Stone: level 76 -->
 				</group>
@@ -926,7 +918,6 @@
 					<item id="5541" min="1" max="1" chance="100.0" /> <!-- Tallum Glaive Edge -->
 				</group>
 				<group chance="43.3213">
-					<item id="8905" min="1" max="1" chance="5.63" /> <!-- Ancient Spellbook: Purification Field -->
 					<item id="8627" min="1" max="1" chance="80.7918" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8633" min="1" max="1" chance="13.5782" /> <!-- Elixir of Mental Strength (S-Grade) -->
 				</group>
@@ -1006,8 +997,6 @@
 				<group chance="15.7947">
 					<item id="8627" min="1" max="1" chance="21.1039" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8633" min="1" max="1" chance="57.557" /> <!-- Elixir of Mental Strength (S-Grade) -->
-					<item id="8903" min="1" max="1" chance="7.113" /> <!-- Ancient Spellbook: Gehenna -->
-					<item id="8908" min="1" max="1" chance="7.113" /> <!-- Ancient Spellbook: Mass Recharge -->
 					<item id="8954" min="1" max="1" chance="7.1131" /> <!-- Blue Primeval Crystal -->
 					<item id="4037" min="1" max="15" chance="100" /> <!-- Coin of Luck -->
 				</group>
@@ -1062,11 +1051,7 @@
 					<item id="5546" min="1" max="1" chance="11.1952" /> <!-- Sword of Miracles Edge -->
 					<item id="8627" min="1" max="1" chance="11.1952" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8633" min="1" max="1" chance="28.0407" /> <!-- Elixir of Mental Strength (S-Grade) -->
-					<item id="8906" min="1" max="1" chance="21.5037" /> <!-- Ancient Spellbook: Miracle -->
 					<item id="8954" min="1" max="1" chance="5.59762" /> <!-- Blue Primeval Crystal -->
-				</group>
-				<group chance="100">
-					<item id="8906" min="1" max="1" chance="0.2133" /> <!-- Ancient Spellbook: Miracle -->
 				</group>
 			</drop>
 		</dropLists>
@@ -1117,7 +1102,6 @@
 					<item id="8342" min="1" max="1" chance="1.86249" /> <!-- Flaming Dragon Skull Piece -->
 					<item id="8349" min="1" max="1" chance="4.65623" /> <!-- Doom Crusher Head -->
 					<item id="8954" min="1" max="1" chance="1.86249" /> <!-- Blue Primeval Crystal -->
-					<item id="8896" min="1" max="1" chance="57.3963" /> <!-- Ancient Tactical Manual: Symbol of Energy -->
 					<item id="8633" min="1" max="1" chance="4.65623" /> <!-- Elixir of Mental Strength (S-Grade) -->
 					<item id="8627" min="1" max="1" chance="11.8663" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8955" min="1" max="1" chance="1.86249" /> <!-- Green Primeval Crystal -->
@@ -1172,7 +1156,6 @@
 					<item id="5534" min="1" max="1" chance="16.5109" /> <!-- Soul Bow Stave -->
 					<item id="8627" min="1" max="1" chance="4.12222" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8633" min="1" max="1" chance="6.8641" /> <!-- Elixir of Mental Strength (S-Grade) -->
-					<item id="8880" min="1" max="1" chance="61.5134" /> <!-- Spellbook: Summon Spectral Knight -->
 					<item id="8954" min="1" max="1" chance="5.49316" /> <!-- Blue Primeval Crystal -->
 					<item id="8955" min="1" max="1" chance="4.12222" /> <!-- Green Primeval Crystal -->
 					<item id="8956" min="1" max="1" chance="1.37407" /> <!-- Red Primeval Crystal -->
@@ -1220,7 +1203,6 @@
 					<item id="5537" min="1" max="1" chance="20.4872" /> <!-- Soul Separator Head -->
 					<item id="8627" min="1" max="1" chance="8.35493" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8633" min="1" max="1" chance="4.6436" /> <!-- Elixir of Mental Strength (S-Grade) -->
-					<item id="8884" min="1" max="1" chance="59.0764" /> <!-- Spellbook: Spell Turning -->
 					<item id="8954" min="1" max="1" chance="3.71895" /> <!-- Blue Primeval Crystal -->
 					<item id="8955" min="1" max="1" chance="3.71895" /> <!-- Green Primeval Crystal -->
 				</group>
@@ -1330,12 +1312,8 @@
 				</group>
 				<group chance="6.7171">
 					<item id="5545" min="1" max="1" chance="19.8493" /> <!-- Dark Legion's Edge Blade -->
-					<item id="8898" min="1" max="1" chance="70.8922" /> <!-- Ancient Tactical Manual: Symbol of the Assassin -->
 					<item id="8627" min="1" max="1" chance="3.08169" /> <!-- Elixir of Life (S-Grade) -->
 					<item id="8633" min="1" max="1" chance="6.17677" /> <!-- Elixir of Mental Strength (S-Grade) -->
-				</group>
-				<group chance="100">
-					<item id="8898" min="1" max="1" chance="0.2571" /> <!-- Ancient Tactical Manual: Symbol of the Assassin -->
 				</group>
 			</drop>
 		</dropLists>
@@ -1403,12 +1381,6 @@
 					<item id="8954" min="1" max="1" chance="17.6534" /> <!-- Blue Primeval Crystal -->
 					<item id="8955" min="1" max="1" chance="17.6534" /> <!-- Green Primeval Crystal -->
 				</group>
-				<group chance="100">
-					<item id="8897" min="1" max="1" chance="2.1429" /> <!-- Ancient Tactical Manual: Symbol of the Sniper -->
-				</group>
-				<group chance="100">
-					<item id="8878" min="1" max="1" chance="2.1429" /> <!-- Spellbook: Summon Feline King -->
-				</group>
 			</drop>
 		</dropLists>
 		<collision>
@@ -1472,9 +1444,6 @@
 					<item id="8633" min="1" max="1" chance="10.3066" /> <!-- Elixir of Mental Strength (S-Grade) -->
 					<item id="8888" min="1" max="1" chance="62.8757" /> <!-- Amulet: Pa'agrio's Fist -->
 					<item id="8954" min="1" max="1" chance="4.1171" /> <!-- Blue Primeval Crystal -->
-				</group>
-				<group chance="100">
-					<item id="8879" min="1" max="1" chance="2.1429" /> <!-- Spellbook: Summon Magnus the Unicorn -->
 				</group>
 			</drop>
 		</dropLists>
